@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+
+# Define x and y coordinates for a straight line
+x = [0, 1, 2, 3, 4, 5]
+y = [0, 2, 4, 6, 8, 10]  # y = 2x
+
+# Create the plot
+plt.plot(x, y, marker='o', linestyle='-', color='b', label='y = 2x')
+
+# Add title and labels
+plt.title('Straight Line Graph')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+
+# Add a grid and legend
+plt.grid(True)
+plt.legend()
+
+# Display the graph
+plt.show()
