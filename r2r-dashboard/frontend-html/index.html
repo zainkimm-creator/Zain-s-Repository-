@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>R2R SysID HTML Dashboard</title>
+    <style>
+      :root {
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #1e2729;
+        background: #ecebe3;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        min-height: 100vh;
+        background: #ecebe3;
+      }
+
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+
+      .app-shell {
+        display: grid;
+        grid-template-columns: 248px minmax(0, 1fr);
+        min-height: 100vh;
+      }
+
+      .sidebar {
+        background: #253235;
+        color: #f6f3ea;
+        padding: 22px 16px;
+        display: grid;
+        align-content: start;
+        gap: 26px;
+      }
+
+      .brand {
+        display: grid;
+        gap: 3px;
+      }
+
+      .brand strong {
+        font-size: 18px;
+      }
+
+      .brand span {
+        color: #c7d4c5;
+        font-size: 13px;
+      }
+
+      .page-nav {
+        display: grid;
+        gap: 6px;
+      }
+
+      .page-nav button {
+        width: 100%;
+        min-height: 42px;
+        border: 0;
+        border-radius: 7px;
+        background: transparent;
+        color: #e9eadf;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 12px;
+        cursor: pointer;
+        text-align: left;
+      }
+
+      .page-nav button.active,
+      .page-nav button:hover {
+        background: #3c4a43;
+      }
+
+      .workspace {
+        padding: 22px;
+        display: grid;
+        grid-template-rows: auto auto 1fr;
+        gap: 16px;
+        min-width: 0;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 4px;
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 16px;
+      }
+
+      .status-pill {
+        display: inline-flex;
+        min-width: 72px;
+        justify-content: center;
+        padding: 3px 8px;
+        border-radius: 999px;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #f8f4e8;
+        background: #7b6b3a;
+      }
+
+      .status-pill.online {
+        background: #2f6f73;
+      }
+
+      .status-pill.offline {
+        background: #a54539;
+      }
+
+      .api-controls {
+        display: grid;
+        grid-template-columns: minmax(180px, 320px) 96px;
+        gap: 8px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        min-height: 38px;
+        border: 1px solid #c4c2b5;
+        border-radius: 7px;
+        padding: 0 10px;
+        background: #fffef8;
+        color: #1e2729;
+      }
+
+      button.primary {
+        min-height: 38px;
+        border: 0;
+        border-radius: 7px;
+        background: #b35f2e;
+        color: #fffaf0;
+        padding: 0 16px;
+        cursor: pointer;
+      }
+
+      .work-grid {
+        display: grid;
+        grid-template-columns: minmax(260px, 380px) minmax(0, 1fr);
+        gap: 16px;
+        align-items: start;
+      }
+
+      .panel {
+        background: #fffef8;
+        border: 1px solid #d4d0c1;
+        border-radius: 8px;
+        padding: 16px;
+        box-shadow: 0 1px 0 rgba(37, 50, 53, 0.04);
+      }
+
+      .field-grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .field {
+        display: grid;
+        gap: 5px;
+        font-size: 13px;
+        color: #465154;
+      }
+
+      .error-banner {
+        display: none;
+        min-height: 42px;
+        align-items: center;
+        padding: 10px 12px;
+        border-radius: 7px;
+        color: #fff7ef;
+        background: #a54539;
+      }
+
+      .error-banner.visible {
+        display: flex;
+      }
+
+      .result-panel {
+        min-height: 420px;
+        overflow: auto;
+      }
+
+      .result-content {
+        display: grid;
+        gap: 14px;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .metric-card {
+        border: 1px solid #dedbce;
+        border-radius: 7px;
+        padding: 12px;
+        background: #fbfaf2;
+        min-width: 0;
+      }
+
+      .metric-card span {
+        display: block;
+        color: #52605c;
+        font-size: 12px;
+        overflow-wrap: anywhere;
+      }
+
+      .metric-card strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 18px;
+        overflow-wrap: anywhere;
+      }
+
+      .link-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .link-row a {
+        min-height: 34px;
+        display: inline-flex;
+        align-items: center;
+        border-radius: 7px;
+        padding: 0 11px;
+        background: #d8d6c8;
+        color: #1e2729;
+        text-decoration: none;
+      }
+
+      .table-scroll {
+        overflow: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid #dedbce;
+        padding: 8px 9px;
+        text-align: left;
+        vertical-align: top;
+        white-space: nowrap;
+      }
+
+      th {
+        color: #52605c;
+        font-weight: 700;
+        background: #f4f1e7;
+      }
+
+      details {
+        border: 1px solid #dedbce;
+        border-radius: 7px;
+        padding: 12px;
+        background: #fbfaf2;
+      }
+
+      summary {
+        cursor: pointer;
+        color: #394649;
+        font-weight: 700;
+      }
+
+      pre {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        margin: 0;
+        font-family: "Cascadia Mono", Consolas, monospace;
+        font-size: 13px;
+      }
+
+      .upload-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        align-items: center;
+      }
+
+      @media (max-width: 920px) {
+        .app-shell,
+        .work-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          padding: 14px;
+        }
+
+        .page-nav {
+          display: flex;
+          overflow-x: auto;
+        }
+
+        .page-nav button {
+          min-width: 150px;
+        }
+
+        .topbar {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .api-controls {
+          grid-template-columns: 1fr auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <strong>R2R SysID</strong>
+          <span>HTML Dashboard</span>
+        </div>
+        <nav class="page-nav" id="nav"></nav>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <h1 id="pageTitle">Simulation</h1>
+            <span class="status-pill" id="status">checking</span>
+          </div>
+          <div class="api-controls">
+            <input id="apiBase" aria-label="API base URL" value="http://127.0.0.1:8000" />
+            <button class="primary" id="refreshButton" type="button">Refresh</button>
+          </div>
+        </header>
+
+        <div class="error-banner" id="errorBanner"></div>
+
+        <div class="work-grid">
+          <section class="panel" id="controls"></section>
+          <section class="panel result-panel">
+            <div id="result" class="result-content">No result yet.</div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const pages = [
+        { id: "simulation", label: "Simulation", route: "/simulate" },
+        { id: "sysid", label: "SysID", route: "/sysid" },
+        { id: "parts", label: "Paper parts", route: "/validate/part/1" },
+        { id: "logging", label: "Logging rate", route: "/validate/logging-rate" },
+        { id: "excitation", label: "Excitation", route: "/validate/excitation" },
+        { id: "drift", label: "Drift", route: "/validate/drift" },
+        { id: "retuning", label: "Retuning", route: "/retune" },
+        { id: "upload", label: "Upload data", route: "/upload" },
+      ];
+
+      const state = {
+        activePage: "simulation",
+        excitationProfiles: ["ET1", "ET3", "ET6", "E_Toggle", "EVR"],
+      };
+
+      const nav = document.querySelector("#nav");
+      const controls = document.querySelector("#controls");
+      const result = document.querySelector("#result");
+      const pageTitle = document.querySelector("#pageTitle");
+      const statusPill = document.querySelector("#status");
+      const apiBase = document.querySelector("#apiBase");
+      const errorBanner = document.querySelector("#errorBanner");
+
+      function showError(message) {
+        errorBanner.textContent = message || "";
+        errorBanner.classList.toggle("visible", Boolean(message));
+      }
+
+      async function requestJson(path, options = {}) {
+        showError("");
+        const response = await fetch(`${apiBase.value}${path}`, {
+          headers: options.body instanceof FormData ? undefined : { "Content-Type": "application/json" },
+          ...options,
+        });
+        if (!response.ok) {
+          throw new Error(`${response.status} ${response.statusText}`);
+        }
+        return response.json();
+      }
+
+      function field(name, label, value, type = "number") {
+        return `
+          <label class="field">
+            <span>${label}</span>
+            <input name="${name}" type="${type}" value="${value}" />
+          </label>
+        `;
+      }
+
+      function excitationSelect(value) {
+        const options = state.excitationProfiles.map((item) => `<option value="${item}" ${item === value ? "selected" : ""}>${item}</option>`);
+        return `
+          <label class="field">
+            <span>Excitation</span>
+            <select name="excitation">${options.join("")}</select>
+          </label>
+        `;
+      }
+
+      function formDataAsPayload(form) {
+        return Object.fromEntries(
+          Array.from(new FormData(form).entries()).map(([key, value]) => {
+            if (key === "excitation") return [key, value];
+            return [key, Number(value)];
+          }),
+        );
+      }
+
+      function formatValue(value) {
+        if (typeof value === "number") {
+          return Number.isInteger(value) ? String(value) : value.toPrecision(6);
+        }
+        if (value === null || value === undefined) return "";
+        return String(value);
+      }
+
+      function titleFromKey(key) {
+        return key.replaceAll("_", " ").replace(/\b\w/g, (char) => char.toUpperCase());
+      }
+
+      function renderMetrics(metrics = {}) {
+        const entries = Object.entries(metrics);
+        if (!entries.length) return "";
+        return `
+          <section>
+            <h2>Metrics</h2>
+            <div class="metric-grid">
+              ${entries
+                .map(
+                  ([key, value]) => `
+                    <div class="metric-card">
+                      <span>${titleFromKey(key)}</span>
+                      <strong>${formatValue(value)}</strong>
+                    </div>
+                  `,
+                )
+                .join("")}
+            </div>
+          </section>
+        `;
+      }
+
+      function renderLinks(data) {
+        const links = [
+          ["CSV", data.csv_url],
+          ["Plot", data.plot_url],
+          ["Summary", data.summary_url],
+          ["Report", data.markdown_url],
+          ["Uploaded file", data.url],
+        ].filter(([, href]) => href);
+        if (!links.length) return "";
+        return `
+          <section>
+            <h2>Outputs</h2>
+            <div class="link-row">
+              ${links.map(([label, href]) => `<a href="${apiBase.value}${href}" target="_blank" rel="noreferrer">${label}</a>`).join("")}
+            </div>
+          </section>
+        `;
+      }
+
+      function renderTable(rows = []) {
+        if (!rows.length) return "";
+        const columns = Object.keys(rows[0]);
+        return `
+          <section>
+            <h2>Preview Rows</h2>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>${columns.map((column) => `<th>${titleFromKey(column)}</th>`).join("")}</tr>
+                </thead>
+                <tbody>
+                  ${rows
+                    .map((row) => `<tr>${columns.map((column) => `<td>${formatValue(row[column])}</td>`).join("")}</tr>`)
+                    .join("")}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        `;
+      }
+
+      function renderResult(data) {
+        result.innerHTML = `
+          ${renderMetrics(data.metrics)}
+          ${renderLinks(data)}
+          ${renderTable(data.preview_rows || data.comparison_table || data.error_table || data.results)}
+          <details>
+            <summary>Raw API response</summary>
+            <pre>${JSON.stringify(data, null, 2)}</pre>
+          </details>
+        `;
+      }
+
+      function renderControls() {
+        const page = pages.find((item) => item.id === state.activePage);
+        pageTitle.textContent = page.label;
+
+        if (state.activePage === "upload") {
+          controls.innerHTML = `
+            <h2>Upload data</h2>
+            <form id="uploadForm" class="field-grid">
+              <label class="field">
+                <span>Data file</span>
+                <input name="file" type="file" required />
+              </label>
+              <button class="primary" type="submit">Upload</button>
+            </form>
+          `;
+          document.querySelector("#uploadForm").addEventListener("submit", uploadFile);
+          return;
+        }
+
+        if (state.activePage === "simulation") {
+          controls.innerHTML = `
+            <h2>Simulation controls</h2>
+            <form id="runForm" class="field-grid">
+              ${field("duration_s", "Duration (s)", "4")}
+              ${field("log_sample_time_ms", "Tlog (ms)", "10")}
+              ${excitationSelect("ET3")}
+              ${field("excitation_amplitude_V", "Amplitude (V)", "0.08")}
+              ${field("sensor_noise_tension_N", "T noise (N)", "0")}
+              ${field("sensor_noise_omega_rad_s", "Omega noise", "0")}
+              <button class="primary" type="submit">Run Simulation</button>
+            </form>
+          `;
+        } else if (state.activePage === "sysid") {
+          controls.innerHTML = `
+            <h2>SysID controls</h2>
+            <form id="runForm" class="field-grid">
+              ${field("duration_s", "Duration (s)", "4")}
+              ${field("log_sample_time_ms", "Tlog (ms)", "10")}
+              ${excitationSelect("E_Toggle")}
+              ${field("sensor_noise_tension_N", "T noise (N)", "0")}
+              ${field("sensor_noise_omega_rad_s", "Omega noise", "0")}
+              <button class="primary" type="submit">Run SysID</button>
+            </form>
+          `;
+        } else {
+          controls.innerHTML = `
+            <h2>${page.label}</h2>
+            <form id="runForm" class="field-grid">
+              <button class="primary" type="submit">Run</button>
+            </form>
+          `;
+        }
+
+        document.querySelector("#runForm").addEventListener("submit", runActiveWorkflow);
+      }
+
+      function renderNav() {
+        nav.innerHTML = pages
+          .map((page) => `<button type="button" class="${page.id === state.activePage ? "active" : ""}" data-page="${page.id}">${page.label}</button>`)
+          .join("");
+      }
+
+      async function refreshMetadata() {
+        try {
+          statusPill.textContent = "checking";
+          const [health, metadata] = await Promise.all([requestJson("/health"), requestJson("/metadata")]);
+          statusPill.textContent = health.status === "ok" ? "online" : "unknown";
+          statusPill.className = `status-pill ${health.status === "ok" ? "online" : ""}`;
+          state.excitationProfiles = metadata.excitation_profiles || state.excitationProfiles;
+          showError("");
+        } catch (error) {
+          statusPill.textContent = "offline";
+          statusPill.className = "status-pill offline";
+          showError(error.message);
+        }
+      }
+
+      async function runActiveWorkflow(event) {
+        event.preventDefault();
+        const page = pages.find((item) => item.id === state.activePage);
+        const payload = formDataAsPayload(event.currentTarget);
+        try {
+          result.textContent = "Running...";
+          const data = await requestJson(page.route, {
+            method: "POST",
+            body: JSON.stringify(payload),
+          });
+          renderResult(data);
+        } catch (error) {
+          result.textContent = "No result.";
+          showError(error.message);
+        }
+      }
+
+      async function uploadFile(event) {
+        event.preventDefault();
+        const formData = new FormData(event.currentTarget);
+        try {
+          result.textContent = "Uploading...";
+          const data = await requestJson("/upload", {
+            method: "POST",
+            body: formData,
+          });
+          renderResult(data);
+        } catch (error) {
+          result.textContent = "No result.";
+          showError(error.message);
+        }
+      }
+
+      nav.addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-page]");
+        if (!button) return;
+        state.activePage = button.dataset.page;
+        renderNav();
+        renderControls();
+      });
+
+      document.querySelector("#refreshButton").addEventListener("click", refreshMetadata);
+
+      renderNav();
+      renderControls();
+      refreshMetadata();
+    </script>
+  </body>
+</html>

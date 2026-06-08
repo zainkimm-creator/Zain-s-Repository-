@@ -1,0 +1,5 @@
+method,paper_real_evaluations,sim_real_evaluations,helper_candidate_evaluations,paper_median_cost,sim_final_cost,cost_relative_difference_percent
+CS-BO(30),30.0,30.0,30.0,0.407,0.9345973942478977,129.63080939751788
+HGS-only,0.0,0.0,1.0,0.403,0.25556514087102056,-36.58433229006935
+HGS+BO(5),5.0,5.0,6.0,0.342,0.2539470654352036,-25.746472094969707
+HGS+BO(10),10.0,10.0,11.0,0.337,0.24712328432215644,-26.669648569093052

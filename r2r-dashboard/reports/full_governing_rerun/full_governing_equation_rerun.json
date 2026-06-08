@@ -1,0 +1,676 @@
+{
+  "model": {
+    "state": "[dT0, dT1, dT2, dv_UW, dv_Nip, dv_RW]",
+    "plant": {
+      "EA_N": 3200.0,
+      "L_m": [
+        1.0,
+        1.0,
+        1.2
+      ],
+      "R_m": [
+        0.05,
+        0.05,
+        0.05
+      ],
+      "J_kg_m2": [
+        0.02,
+        0.015,
+        0.025
+      ],
+      "f_N_s_m": [
+        0.3,
+        0.28,
+        0.32
+      ],
+      "line_speed_m_s": 0.01,
+      "alpha_velocity_gain": 1.4,
+      "max_motor_torque_Nm": 2.0
+    },
+    "kt": [
+      0.12500000000000003,
+      0.1666666666666667,
+      0.10000000000000002
+    ],
+    "kf": [
+      15.0,
+      18.666666666666668,
+      12.799999999999999
+    ],
+    "ku": [
+      2.5,
+      3.3333333333333335,
+      2.0
+    ]
+  },
+  "paper_references": {
+    "logging": {
+      "nf": {
+        "1": 0.0,
+        "5": 3.4,
+        "50": 38.8
+      },
+      "sn": {
+        "1": 169.0,
+        "20": 23.2,
+        "100": 77.2
+      },
+      "claim": "NF improves with shorter Tlog; SN is U-shaped with optimum at 10-20 ms."
+    },
+    "excitation": {
+      "nf": {
+        "ET1": 2.5,
+        "ET3": 3.5,
+        "ET6": 3.4,
+        "EVR": 3.5,
+        "E_Toggle": 3.4
+      },
+      "sn": {
+        "ET1": 31.4,
+        "ET3": 22.2,
+        "ET6": 21.0,
+        "EVR": 25.1,
+        "E_Toggle": 20.4
+      },
+      "claim": "Single-channel is sufficient under NF; multi-channel/toggle wins under SN."
+    },
+    "drift": {
+      "EA_plus30": 15.2,
+      "f_plus30": 20.5,
+      "J_UWminus30_RWplus50": 26.8,
+      "J_UWminus50_RWplus100": 39.3,
+      "claim": "J drift dominates; EA drift is partly absorbed by cascade feedforward."
+    },
+    "noise_lpf": {
+      "lpf_50hz_tlog20": 23.2,
+      "lpf_100hz_tlog20": 20.4,
+      "claim": "LPF >= 50 Hz is required; 10-20 ms logging is preferred under sensor noise."
+    },
+    "gain": {
+      "kp50_nf": 16.2,
+      "kp100_nf": 16.7,
+      "kp200_nf": 26.7,
+      "kp50_sn": 21.9,
+      "kp100_sn": 20.4,
+      "kp200_sn": 18.6,
+      "claim": "Kp* = 100 is the default; Kp* = 200 can help under sensor noise."
+    },
+    "retuning": {
+      "CS-BO(30)": {
+        "real_evaluations": 30,
+        "median_cost": 0.407
+      },
+      "WS-BO(30)": {
+        "real_evaluations": 30,
+        "median_cost": 0.408
+      },
+      "HGS-only": {
+        "real_evaluations": 0,
+        "median_cost": 0.403
+      },
+      "HGS+BO(5)": {
+        "real_evaluations": 5,
+        "median_cost": 0.342
+      },
+      "HGS+BO(10)": {
+        "real_evaluations": 10,
+        "median_cost": 0.337
+      },
+      "claim": "HGS+BO(5) beats CS-BO(30) with 83% fewer real evaluations."
+    }
+  },
+  "sections": {
+    "logging": {
+      "rows": [
+        {
+          "case": "NF",
+          "Tlog_ms": 1,
+          "paper_RMSE_theta_percent": 0.0,
+          "sim_RMSE_theta_percent": 0.6384855221374696,
+          "relative_difference_percent": null
+        },
+        {
+          "case": "NF",
+          "Tlog_ms": 2,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 1.27997928906103,
+          "relative_difference_percent": null
+        },
+        {
+          "case": "NF",
+          "Tlog_ms": 5,
+          "paper_RMSE_theta_percent": 3.4,
+          "sim_RMSE_theta_percent": 3.2425546252352944,
+          "relative_difference_percent": -4.630746316608986
+        },
+        {
+          "case": "NF",
+          "Tlog_ms": 10,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 6.7461002994217925,
+          "relative_difference_percent": null
+        },
+        {
+          "case": "NF",
+          "Tlog_ms": 20,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 25.104038530364264,
+          "relative_difference_percent": null
+        },
+        {
+          "case": "NF",
+          "Tlog_ms": 50,
+          "paper_RMSE_theta_percent": 38.8,
+          "sim_RMSE_theta_percent": 60.969476319726446,
+          "relative_difference_percent": 57.13782556630529
+        },
+        {
+          "case": "NF",
+          "Tlog_ms": 100,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 72.1599298111481,
+          "relative_difference_percent": null
+        },
+        {
+          "case": "SN",
+          "Tlog_ms": 1,
+          "paper_RMSE_theta_percent": 169.0,
+          "sim_RMSE_theta_percent": 0.8406394814189507,
+          "relative_difference_percent": -99.5025801885095
+        },
+        {
+          "case": "SN",
+          "Tlog_ms": 2,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 1.405796539932569,
+          "relative_difference_percent": null
+        },
+        {
+          "case": "SN",
+          "Tlog_ms": 5,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 3.304801093046563,
+          "relative_difference_percent": null
+        },
+        {
+          "case": "SN",
+          "Tlog_ms": 10,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 6.871685713733299,
+          "relative_difference_percent": null
+        },
+        {
+          "case": "SN",
+          "Tlog_ms": 20,
+          "paper_RMSE_theta_percent": 23.2,
+          "sim_RMSE_theta_percent": 25.155947275868073,
+          "relative_difference_percent": 8.430807223569282
+        },
+        {
+          "case": "SN",
+          "Tlog_ms": 50,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 61.01067030522221,
+          "relative_difference_percent": null
+        },
+        {
+          "case": "SN",
+          "Tlog_ms": 100,
+          "paper_RMSE_theta_percent": 77.2,
+          "sim_RMSE_theta_percent": 72.23799781948556,
+          "relative_difference_percent": -6.42746396439695
+        }
+      ],
+      "csv_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\full_governing_rerun\\data\\logging_full_equation.csv",
+      "figure_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\full_governing_rerun\\figures\\logging_full_equation.png",
+      "best_sn_Tlog_ms": 1,
+      "paper_claim": "NF improves with shorter Tlog; SN is U-shaped with optimum at 10-20 ms."
+    },
+    "excitation": {
+      "rows": [
+        {
+          "case": "NF",
+          "excitation": "ET1",
+          "paper_RMSE_theta_percent": 2.5,
+          "sim_RMSE_theta_percent": 3.808219211813145,
+          "relative_difference_percent": 52.3287684725258
+        },
+        {
+          "case": "NF",
+          "excitation": "ET3",
+          "paper_RMSE_theta_percent": 3.5,
+          "sim_RMSE_theta_percent": 3.6780368155554792,
+          "relative_difference_percent": 5.086766158727978
+        },
+        {
+          "case": "NF",
+          "excitation": "ET6",
+          "paper_RMSE_theta_percent": 3.4,
+          "sim_RMSE_theta_percent": 3.65365467671228,
+          "relative_difference_percent": 7.460431668008237
+        },
+        {
+          "case": "NF",
+          "excitation": "E_Toggle",
+          "paper_RMSE_theta_percent": 3.4,
+          "sim_RMSE_theta_percent": 3.2425546252352944,
+          "relative_difference_percent": -4.630746316608986
+        },
+        {
+          "case": "NF",
+          "excitation": "EVR",
+          "paper_RMSE_theta_percent": 3.5,
+          "sim_RMSE_theta_percent": 3.846801666650705,
+          "relative_difference_percent": 9.908619047163
+        },
+        {
+          "case": "SN",
+          "excitation": "ET1",
+          "paper_RMSE_theta_percent": 31.4,
+          "sim_RMSE_theta_percent": 13.281562819164527,
+          "relative_difference_percent": -57.70202923832953
+        },
+        {
+          "case": "SN",
+          "excitation": "ET3",
+          "paper_RMSE_theta_percent": 22.2,
+          "sim_RMSE_theta_percent": 14.79783652819256,
+          "relative_difference_percent": -33.34307870183531
+        },
+        {
+          "case": "SN",
+          "excitation": "ET6",
+          "paper_RMSE_theta_percent": 21.0,
+          "sim_RMSE_theta_percent": 17.176084872264155,
+          "relative_difference_percent": -18.209119655884972
+        },
+        {
+          "case": "SN",
+          "excitation": "E_Toggle",
+          "paper_RMSE_theta_percent": 20.4,
+          "sim_RMSE_theta_percent": 21.927374911583836,
+          "relative_difference_percent": 7.487131919528617
+        },
+        {
+          "case": "SN",
+          "excitation": "EVR",
+          "paper_RMSE_theta_percent": 25.1,
+          "sim_RMSE_theta_percent": 12.92697749111184,
+          "relative_difference_percent": -48.49809764497275
+        }
+      ],
+      "csv_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\full_governing_rerun\\data\\excitation_full_equation.csv",
+      "figure_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\full_governing_rerun\\figures\\excitation_full_equation.png",
+      "best_sn_excitation": "EVR",
+      "paper_claim": "Single-channel is sufficient under NF; multi-channel/toggle wins under SN."
+    },
+    "drift": {
+      "rows": [
+        {
+          "scenario": "EA_plus30",
+          "paper_RMSE_theta_percent": 15.2,
+          "sim_RMSE_theta_percent": 27.898190973532515,
+          "relative_difference_percent": 83.54073008902971
+        },
+        {
+          "scenario": "f_plus30",
+          "paper_RMSE_theta_percent": 20.5,
+          "sim_RMSE_theta_percent": 21.46947949886889,
+          "relative_difference_percent": 4.7291682871653125
+        },
+        {
+          "scenario": "J_UWminus30_RWplus50",
+          "paper_RMSE_theta_percent": 26.8,
+          "sim_RMSE_theta_percent": 27.746114822602696,
+          "relative_difference_percent": 3.530279188816026
+        },
+        {
+          "scenario": "J_UWminus50_RWplus100",
+          "paper_RMSE_theta_percent": 39.3,
+          "sim_RMSE_theta_percent": 28.964303572341095,
+          "relative_difference_percent": -26.299482004221126
+        }
+      ],
+      "csv_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\full_governing_rerun\\data\\drift_full_equation.csv",
+      "figure_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\full_governing_rerun\\figures\\drift_full_equation.png",
+      "dominant_simulated_source": "J_UWminus50_RWplus100",
+      "paper_claim": "J drift dominates; EA drift is partly absorbed by cascade feedforward."
+    },
+    "noise_lpf": {
+      "rows": [
+        {
+          "LPF": "No LPF",
+          "Tlog_ms": 1,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 0.8118132827488838,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "No LPF",
+          "Tlog_ms": 2,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 1.4149015765333903,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "No LPF",
+          "Tlog_ms": 5,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 3.368847763698747,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "No LPF",
+          "Tlog_ms": 10,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 6.898346929624295,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "No LPF",
+          "Tlog_ms": 20,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 25.146287873600325,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "No LPF",
+          "Tlog_ms": 50,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 60.97860600974527,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "No LPF",
+          "Tlog_ms": 100,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 72.12704176922597,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "10 Hz",
+          "Tlog_ms": 1,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 52.71342659102424,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "10 Hz",
+          "Tlog_ms": 2,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 52.39017870625483,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "10 Hz",
+          "Tlog_ms": 5,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 51.74741026990658,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "10 Hz",
+          "Tlog_ms": 10,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 51.237474986483825,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "10 Hz",
+          "Tlog_ms": 20,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 38.26088163744718,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "10 Hz",
+          "Tlog_ms": 50,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 56.22393525140086,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "10 Hz",
+          "Tlog_ms": 100,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 73.60751706829156,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "50 Hz",
+          "Tlog_ms": 1,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 18.94499222781931,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "50 Hz",
+          "Tlog_ms": 2,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 18.646453218637653,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "50 Hz",
+          "Tlog_ms": 5,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 18.044805235426807,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "50 Hz",
+          "Tlog_ms": 10,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 18.18584740247136,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "50 Hz",
+          "Tlog_ms": 20,
+          "paper_RMSE_theta_percent": 23.2,
+          "sim_RMSE_theta_percent": 20.72955920272617,
+          "relative_difference_percent": -10.648451712387203
+        },
+        {
+          "LPF": "50 Hz",
+          "Tlog_ms": 50,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 59.21644264458495,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "50 Hz",
+          "Tlog_ms": 100,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 72.41933278283757,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "100 Hz",
+          "Tlog_ms": 1,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 10.226396167257896,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "100 Hz",
+          "Tlog_ms": 2,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 10.158322494681993,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "100 Hz",
+          "Tlog_ms": 5,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 10.286243382239322,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "100 Hz",
+          "Tlog_ms": 10,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 11.780390821113942,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "100 Hz",
+          "Tlog_ms": 20,
+          "paper_RMSE_theta_percent": 20.4,
+          "sim_RMSE_theta_percent": 21.973169777097166,
+          "relative_difference_percent": 7.711616554397878
+        },
+        {
+          "LPF": "100 Hz",
+          "Tlog_ms": 50,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 60.026973835606455,
+          "relative_difference_percent": null
+        },
+        {
+          "LPF": "100 Hz",
+          "Tlog_ms": 100,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 72.27280335771137,
+          "relative_difference_percent": null
+        }
+      ],
+      "csv_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\full_governing_rerun\\data\\noise_lpf_full_equation.csv",
+      "figure_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\full_governing_rerun\\figures\\noise_lpf_full_equation.png",
+      "best_case": {
+        "LPF": "No LPF",
+        "Tlog_ms": 1,
+        "RMSE_theta_percent": 0.8118132827488838
+      },
+      "paper_claim": "LPF >= 50 Hz is required; 10-20 ms logging is preferred under sensor noise."
+    },
+    "gain": {
+      "rows": [
+        {
+          "case": "NF",
+          "Kp_star": 50,
+          "paper_RMSE_theta_percent": 16.2,
+          "sim_RMSE_theta_percent": 14.456338885174272,
+          "relative_difference_percent": -10.763340214973624
+        },
+        {
+          "case": "NF",
+          "Kp_star": 100,
+          "paper_RMSE_theta_percent": 16.7,
+          "sim_RMSE_theta_percent": 25.104038530364264,
+          "relative_difference_percent": 50.32358401415728
+        },
+        {
+          "case": "NF",
+          "Kp_star": 200,
+          "paper_RMSE_theta_percent": 26.7,
+          "sim_RMSE_theta_percent": 61.87876875121455,
+          "relative_difference_percent": 131.75568820679607
+        },
+        {
+          "case": "SN",
+          "Kp_star": 50,
+          "paper_RMSE_theta_percent": 21.9,
+          "sim_RMSE_theta_percent": 16.212570268040054,
+          "relative_difference_percent": -25.96999877607281
+        },
+        {
+          "case": "SN",
+          "Kp_star": 100,
+          "paper_RMSE_theta_percent": 20.4,
+          "sim_RMSE_theta_percent": 21.95341806004229,
+          "relative_difference_percent": 7.61479441197201
+        },
+        {
+          "case": "SN",
+          "Kp_star": 200,
+          "paper_RMSE_theta_percent": 18.6,
+          "sim_RMSE_theta_percent": 52.105283933048675,
+          "relative_difference_percent": 180.1359351239176
+        }
+      ],
+      "csv_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\full_governing_rerun\\data\\gain_full_equation.csv",
+      "figure_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\full_governing_rerun\\figures\\gain_full_equation.png",
+      "best_sn_gain": 50,
+      "paper_claim": "Kp* = 100 is the default; Kp* = 200 can help under sensor noise."
+    },
+    "retuning": {
+      "rows": [
+        {
+          "method": "CS-BO(30)",
+          "paper_real_evaluations": 30,
+          "sim_real_evaluations": 30,
+          "paper_median_cost": 0.407,
+          "sim_final_cost": 24.138485111342714,
+          "cost_relative_difference_percent": 5830.831722688627
+        },
+        {
+          "method": "HGS-only",
+          "paper_real_evaluations": 0,
+          "sim_real_evaluations": 0,
+          "paper_median_cost": 0.403,
+          "sim_final_cost": 24.205803518304528,
+          "cost_relative_difference_percent": 5906.402858140081
+        },
+        {
+          "method": "HGS+BO(5)",
+          "paper_real_evaluations": 5,
+          "sim_real_evaluations": 5,
+          "paper_median_cost": 0.342,
+          "sim_final_cost": 24.11978053011914,
+          "cost_relative_difference_percent": 6952.567406467584
+        },
+        {
+          "method": "HGS+BO(10)",
+          "paper_real_evaluations": 10,
+          "sim_real_evaluations": 10,
+          "paper_median_cost": 0.337,
+          "sim_final_cost": 24.1233478493443,
+          "cost_relative_difference_percent": 7058.263456778723
+        }
+      ],
+      "csv_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\full_governing_rerun\\data\\retuning_full_equation.csv",
+      "figure_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\full_governing_rerun\\figures\\retuning_full_equation.png",
+      "best_simulated_method": "HGS+BO(5)",
+      "paper_claim": "HGS+BO(5) beats CS-BO(30) with 83% fewer real evaluations."
+    }
+  },
+  "alignment": [
+    {
+      "section": "Logging adequacy",
+      "paper_claim": "NF improves with shorter Tlog; SN is U-shaped with optimum at 10-20 ms.",
+      "rerun_finding": "Best SN Tlog = 1 ms",
+      "alignment": "does not support"
+    },
+    {
+      "section": "Excitation diversity",
+      "paper_claim": "Single-channel is sufficient under NF; multi-channel/toggle wins under SN.",
+      "rerun_finding": "Best SN excitation = EVR",
+      "alignment": "supports"
+    },
+    {
+      "section": "Parameter drift",
+      "paper_claim": "J drift dominates; EA drift is partly absorbed by cascade feedforward.",
+      "rerun_finding": "Largest scenario = J_UWminus50_RWplus100",
+      "alignment": "supports"
+    },
+    {
+      "section": "Noise and LPF",
+      "paper_claim": "LPF >= 50 Hz is required; 10-20 ms logging is preferred under sensor noise.",
+      "rerun_finding": "Best = No LPF at 1 ms",
+      "alignment": "does not support"
+    },
+    {
+      "section": "SysID-mode gain",
+      "paper_claim": "Kp* = 100 is the default; Kp* = 200 can help under sensor noise.",
+      "rerun_finding": "Best SN Kp* = 50",
+      "alignment": "does not support"
+    },
+    {
+      "section": "Retuning",
+      "paper_claim": "HGS+BO(5) beats CS-BO(30) with 83% fewer real evaluations.",
+      "rerun_finding": "Lowest cost = HGS+BO(5)",
+      "alignment": "supports"
+    }
+  ]
+}

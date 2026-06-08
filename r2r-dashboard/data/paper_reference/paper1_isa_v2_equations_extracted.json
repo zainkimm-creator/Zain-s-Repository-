@@ -1,0 +1,1083 @@
+{
+  "pdf": "C:\\Users\\user\\Documents\\New project121\\paper1_isa_v2_equation_identifier.pdf",
+  "page_count": 4,
+  "metadata": {
+    "format": "PDF 1.4",
+    "title": "Equation Identifier - paper1_isa_v2",
+    "author": "",
+    "subject": "",
+    "keywords": "",
+    "creator": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.0.0 Safari/537.36",
+    "producer": "Skia/PDF m148",
+    "creationDate": "D:20260604084622+00'00'",
+    "modDate": "D:20260604084622+00'00'",
+    "trapped": "",
+    "encryption": null
+  },
+  "fonts": [
+    [
+      "TimesNewRomanPSMT",
+      10489
+    ],
+    [
+      "TimesNewRomanPS-BoldMT",
+      1255
+    ],
+    [
+      "CambriaMath",
+      1222
+    ],
+    [
+      "TimesNewRomanPS-BoldItal",
+      67
+    ],
+    [
+      "Consolas",
+      17
+    ]
+  ],
+  "font_sizes": [
+    [
+      "9.3",
+      7377
+    ],
+    [
+      "8.1",
+      2942
+    ],
+    [
+      "7.5",
+      1675
+    ],
+    [
+      "7.8",
+      415
+    ],
+    [
+      "8.0",
+      366
+    ],
+    [
+      "9.7",
+      110
+    ],
+    [
+      "13.4",
+      90
+    ],
+    [
+      "6.8",
+      52
+    ],
+    [
+      "6.2",
+      19
+    ],
+    [
+      "6.5",
+      4
+    ]
+  ],
+  "numbered_candidates": [
+    {
+      "page": 1,
+      "number": 1,
+      "context": "dded Type3\ntext fonts plus Computer Modern math fonts (CMR, CMMI, CMSY), STIX, TeX Gyre Termes, and Times New Roman. This report uses a\ncompact two-column academic layout, Times-style body text, and a math-style font stack to approximate the paper.\nEquation Index\nID\nEquation / definition\nRole in the paper\nPaper example or result linked to it\nU-0\nState, input, output, and physical\ndefinitions\nSets the variables for the R2R plant.\nThe 7-parameter SysID vector is built from\nthis plant description.\n(1)\nWeb tension dynamics\nComputes tension change in each span.\nUsed in all simulations and in the logging-\nrate result.\n(2)\nRoller velocity dynamics\nConnects tension, friction, inertia, and motor\ntorque.\nExplains why reel inertia drift is dominant.\n(3)\nOuter tension PI correction\nTurns tension error into velocity correction.\nLeads to the use of normalized gain K*\np as\nthe SysID tuning knob.\n(4)\nInner velocity P plus feedforward\ntorque\nGenerates motor torque from velocity error and\nfeedforward.\nCrea"
+    },
+    {
+      "page": 1,
+      "number": 2,
+      "context": "s report uses a\ncompact two-column academic layout, Times-style body text, and a math-style font stack to approximate the paper.\nEquation Index\nID\nEquation / definition\nRole in the paper\nPaper example or result linked to it\nU-0\nState, input, output, and physical\ndefinitions\nSets the variables for the R2R plant.\nThe 7-parameter SysID vector is built from\nthis plant description.\n(1)\nWeb tension dynamics\nComputes tension change in each span.\nUsed in all simulations and in the logging-\nrate result.\n(2)\nRoller velocity dynamics\nConnects tension, friction, inertia, and motor\ntorque.\nExplains why reel inertia drift is dominant.\n(3)\nOuter tension PI correction\nTurns tension error into velocity correction.\nLeads to the use of normalized gain K*\np as\nthe SysID tuning knob.\n(4)\nInner velocity P plus feedforward\ntorque\nGenerates motor torque from velocity error and\nfeedforward.\nCreates the cascade-control behavior where\nζCL,min loses predictive value.\n(5)\nMeasurement-based feedforward\nCompensates mea"
+    },
+    {
+      "page": 1,
+      "number": 3,
+      "context": "Equation Index\nID\nEquation / definition\nRole in the paper\nPaper example or result linked to it\nU-0\nState, input, output, and physical\ndefinitions\nSets the variables for the R2R plant.\nThe 7-parameter SysID vector is built from\nthis plant description.\n(1)\nWeb tension dynamics\nComputes tension change in each span.\nUsed in all simulations and in the logging-\nrate result.\n(2)\nRoller velocity dynamics\nConnects tension, friction, inertia, and motor\ntorque.\nExplains why reel inertia drift is dominant.\n(3)\nOuter tension PI correction\nTurns tension error into velocity correction.\nLeads to the use of normalized gain K*\np as\nthe SysID tuning knob.\n(4)\nInner velocity P plus feedforward\ntorque\nGenerates motor torque from velocity error and\nfeedforward.\nCreates the cascade-control behavior where\nζCL,min loses predictive value.\n(5)\nMeasurement-based feedforward\nCompensates measured tension load and\nfriction.\nHelps absorb EA drift under cascade control.\n(6)\nRatio parameters kt, kf, ku\nDefines identifiabl"
+    },
+    {
+      "page": 1,
+      "number": 4,
+      "context": "\nSets the variables for the R2R plant.\nThe 7-parameter SysID vector is built from\nthis plant description.\n(1)\nWeb tension dynamics\nComputes tension change in each span.\nUsed in all simulations and in the logging-\nrate result.\n(2)\nRoller velocity dynamics\nConnects tension, friction, inertia, and motor\ntorque.\nExplains why reel inertia drift is dominant.\n(3)\nOuter tension PI correction\nTurns tension error into velocity correction.\nLeads to the use of normalized gain K*\np as\nthe SysID tuning knob.\n(4)\nInner velocity P plus feedforward\ntorque\nGenerates motor torque from velocity error and\nfeedforward.\nCreates the cascade-control behavior where\nζCL,min loses predictive value.\n(5)\nMeasurement-based feedforward\nCompensates measured tension load and\nfriction.\nHelps absorb EA drift under cascade control.\n(6)\nRatio parameters kt, kf, ku\nDefines identifiable parameters used in SysID.\nPer-roller error asymmetry localizes drift\nsource.\n(7)\nOne-step prediction-error cost\nObjective minimized to estimate"
+    },
+    {
+      "page": 1,
+      "number": 5,
+      "context": " simulations and in the logging-\nrate result.\n(2)\nRoller velocity dynamics\nConnects tension, friction, inertia, and motor\ntorque.\nExplains why reel inertia drift is dominant.\n(3)\nOuter tension PI correction\nTurns tension error into velocity correction.\nLeads to the use of normalized gain K*\np as\nthe SysID tuning knob.\n(4)\nInner velocity P plus feedforward\ntorque\nGenerates motor torque from velocity error and\nfeedforward.\nCreates the cascade-control behavior where\nζCL,min loses predictive value.\n(5)\nMeasurement-based feedforward\nCompensates measured tension load and\nfriction.\nHelps absorb EA drift under cascade control.\n(6)\nRatio parameters kt, kf, ku\nDefines identifiable parameters used in SysID.\nPer-roller error asymmetry localizes drift\nsource.\n(7)\nOne-step prediction-error cost\nObjective minimized to estimate θ.\nData design changes RMSEθ by orders of\nmagnitude.\n(8)\nMulti-condition prediction-error cost\nCombines excitation conditions.\nSupports E_Toggle and multi-channel\nexcitation under"
+    },
+    {
+      "page": 1,
+      "number": 6,
+      "context": "e.\nExplains why reel inertia drift is dominant.\n(3)\nOuter tension PI correction\nTurns tension error into velocity correction.\nLeads to the use of normalized gain K*\np as\nthe SysID tuning knob.\n(4)\nInner velocity P plus feedforward\ntorque\nGenerates motor torque from velocity error and\nfeedforward.\nCreates the cascade-control behavior where\nζCL,min loses predictive value.\n(5)\nMeasurement-based feedforward\nCompensates measured tension load and\nfriction.\nHelps absorb EA drift under cascade control.\n(6)\nRatio parameters kt, kf, ku\nDefines identifiable parameters used in SysID.\nPer-roller error asymmetry localizes drift\nsource.\n(7)\nOne-step prediction-error cost\nObjective minimized to estimate θ.\nData design changes RMSEθ by orders of\nmagnitude.\n(8)\nMulti-condition prediction-error cost\nCombines excitation conditions.\nSupports E_Toggle and multi-channel\nexcitation under noise.\nU-8\nInitial-guess and error metrics\nQuantifies convergence and SysID accuracy.\nUses α ∈ {1.5, 2, 5, 10, 50} and RMSEθ.\n"
+    },
+    {
+      "page": 1,
+      "number": 7,
+      "context": "s to the use of normalized gain K*\np as\nthe SysID tuning knob.\n(4)\nInner velocity P plus feedforward\ntorque\nGenerates motor torque from velocity error and\nfeedforward.\nCreates the cascade-control behavior where\nζCL,min loses predictive value.\n(5)\nMeasurement-based feedforward\nCompensates measured tension load and\nfriction.\nHelps absorb EA drift under cascade control.\n(6)\nRatio parameters kt, kf, ku\nDefines identifiable parameters used in SysID.\nPer-roller error asymmetry localizes drift\nsource.\n(7)\nOne-step prediction-error cost\nObjective minimized to estimate θ.\nData design changes RMSEθ by orders of\nmagnitude.\n(8)\nMulti-condition prediction-error cost\nCombines excitation conditions.\nSupports E_Toggle and multi-channel\nexcitation under noise.\nU-8\nInitial-guess and error metrics\nQuantifies convergence and SysID accuracy.\nUses α ∈ {1.5, 2, 5, 10, 50} and RMSEθ.\n(9)\nRetuning score S\nRanks PI retuning methods.\nHGS+BO(5) reaches median cost 0.342 with\n5 real evaluations.\nU-9\nDeployment rules\n"
+    },
+    {
+      "page": 1,
+      "number": 8,
+      "context": "tor torque from velocity error and\nfeedforward.\nCreates the cascade-control behavior where\nζCL,min loses predictive value.\n(5)\nMeasurement-based feedforward\nCompensates measured tension load and\nfriction.\nHelps absorb EA drift under cascade control.\n(6)\nRatio parameters kt, kf, ku\nDefines identifiable parameters used in SysID.\nPer-roller error asymmetry localizes drift\nsource.\n(7)\nOne-step prediction-error cost\nObjective minimized to estimate θ.\nData design changes RMSEθ by orders of\nmagnitude.\n(8)\nMulti-condition prediction-error cost\nCombines excitation conditions.\nSupports E_Toggle and multi-channel\nexcitation under noise.\nU-8\nInitial-guess and error metrics\nQuantifies convergence and SysID accuracy.\nUses α ∈ {1.5, 2, 5, 10, 50} and RMSEθ.\n(9)\nRetuning score S\nRanks PI retuning methods.\nHGS+BO(5) reaches median cost 0.342 with\n5 real evaluations.\nU-9\nDeployment rules\nTurns results into field protocol.\nTlog = 10-20 ms, LPF fc ≥ 50 Hz, K*\np = 100-\n200.\nDetailed Equation Explanations\nU-0."
+    },
+    {
+      "page": 1,
+      "number": 9,
+      "context": "\nRatio parameters kt, kf, ku\nDefines identifiable parameters used in SysID.\nPer-roller error asymmetry localizes drift\nsource.\n(7)\nOne-step prediction-error cost\nObjective minimized to estimate θ.\nData design changes RMSEθ by orders of\nmagnitude.\n(8)\nMulti-condition prediction-error cost\nCombines excitation conditions.\nSupports E_Toggle and multi-channel\nexcitation under noise.\nU-8\nInitial-guess and error metrics\nQuantifies convergence and SysID accuracy.\nUses α ∈ {1.5, 2, 5, 10, 50} and RMSEθ.\n(9)\nRetuning score S\nRanks PI retuning methods.\nHGS+BO(5) reaches median cost 0.342 with\n5 real evaluations.\nU-9\nDeployment rules\nTurns results into field protocol.\nTlog = 10-20 ms, LPF fc ≥ 50 Hz, K*\np = 100-\n200.\nDetailed Equation Explanations\nU-0. Plant variables and physical setup\nx = [T1, T2, T3, ωUW, ωNip, ωRW]⊤ ∈ R6,\nu = [uUW, uNip, uRW]⊤, y = [T1, T2, T3]⊤\nU-0a\nEA = E × h × w,   vi = ωiRi,   Jreel ∝ R4\nU-0b\nThe paper starts by fixing a three-span plant: three tensions and three roller angul"
+    },
+    {
+      "page": 1,
+      "number": 5,
+      "context": "meters used in SysID.\nPer-roller error asymmetry localizes drift\nsource.\n(7)\nOne-step prediction-error cost\nObjective minimized to estimate θ.\nData design changes RMSEθ by orders of\nmagnitude.\n(8)\nMulti-condition prediction-error cost\nCombines excitation conditions.\nSupports E_Toggle and multi-channel\nexcitation under noise.\nU-8\nInitial-guess and error metrics\nQuantifies convergence and SysID accuracy.\nUses α ∈ {1.5, 2, 5, 10, 50} and RMSEθ.\n(9)\nRetuning score S\nRanks PI retuning methods.\nHGS+BO(5) reaches median cost 0.342 with\n5 real evaluations.\nU-9\nDeployment rules\nTurns results into field protocol.\nTlog = 10-20 ms, LPF fc ≥ 50 Hz, K*\np = 100-\n200.\nDetailed Equation Explanations\nU-0. Plant variables and physical setup\nx = [T1, T2, T3, ωUW, ωNip, ωRW]⊤ ∈ R6,\nu = [uUW, uNip, uRW]⊤, y = [T1, T2, T3]⊤\nU-0a\nEA = E × h × w,   vi = ωiRi,   Jreel ∝ R4\nU-0b\nThe paper starts by fixing a three-span plant: three tensions and three roller angular velocities are the state, three torques are\nthe inp"
+    },
+    {
+      "page": 2,
+      "number": 1,
+      "context": "(1). Web tension dynamics\nṪi = EA/Li(vi − vi−1) + 1/Li(Ti−1vi−1 − Tivi)\n(1)\nEquation (1) governs how each span tension changes. The first term says that velocity mismatch stretches or relaxes the web\nthrough stiffness EA. The second term accounts for convective transport of tension into and out of a span. The boundary\ncondition is T0 = T4 = 0 for the free spans before the unwinder and after the rewinder.\nThis equation is the tension side of the simulator. It is integrated with equation (2) using RK"
+    },
+    {
+      "page": 2,
+      "number": 1,
+      "context": "(1). Web tension dynamics\nṪi = EA/Li(vi − vi−1) + 1/Li(Ti−1vi−1 − Tivi)\n(1)\nEquation (1) governs how each span tension changes. The first term says that velocity mismatch stretches or relaxes the web\nthrough stiffness EA. The second term accounts for convective transport of tension into and out of a span. The boundary\ncondition is T0 = T4 = 0 for the free spans before the unwinder and after the rewinder.\nThis equation is the tension side of the simulator. It is integrated with equation (2) using RK4 at Δt = 1 ms, while the\ncontroller runs at Ts = 10 ms and measurements"
+    },
+    {
+      "page": 2,
+      "number": 1,
+      "context": "(1). Web tension dynamics\nṪi = EA/Li(vi − vi−1) + 1/Li(Ti−1vi−1 − Tivi)\n(1)\nEquation (1) governs how each span tension changes. The first term says that velocity mismatch stretches or relaxes the web\nthrough stiffness EA. The second term accounts for convective transport of tension into and out of a span. The boundary\ncondition is T0 = T4 = 0 for the free spans before the unwinder and after the rewinder.\nThis equation is the tension side of the simulator. It is integrated with equation (2) using RK4 at Δt = 1 ms, while the\ncontroller runs at Ts = 10 ms and measurements are logged a"
+    },
+    {
+      "page": 2,
+      "number": 2,
+      "context": "(1). Web tension dynamics\nṪi = EA/Li(vi − vi−1) + 1/Li(Ti−1vi−1 − Tivi)\n(1)\nEquation (1) governs how each span tension changes. The first term says that velocity mismatch stretches or relaxes the web\nthrough stiffness EA. The second term accounts for convective transport of tension into and out of a span. The boundary\ncondition is T0 = T4 = 0 for the free spans before the unwinder and after the rewinder.\nThis equation is the tension side of the simulator. It is integrated with equation (2) using RK4 at Δt = 1 ms, while the\ncontroller runs at Ts = 10 ms and measurements are logged at Tlog.\nPaper example. Because equation (1) produces the tension trajectories y, it directly feeds the one-step prediction residual in equation (7). The\npaper’s logging result follows from this: under noise-free conditions τmin/Tlog ≥ 5 is sufficient for sub-3% SysID error, while under sensor\nnoise Tlog = 10-20 ms becomes optimal.\n(2). Roller velocity dynamics\nv̇i = (Ri\n2/Ji)(Ti+1 − Ti) − (fi/Ji)vi + (R"
+    },
+    {
+      "page": 2,
+      "number": 1,
+      "context": "The first term says that velocity mismatch stretches or relaxes the web\nthrough stiffness EA. The second term accounts for convective transport of tension into and out of a span. The boundary\ncondition is T0 = T4 = 0 for the free spans before the unwinder and after the rewinder.\nThis equation is the tension side of the simulator. It is integrated with equation (2) using RK4 at Δt = 1 ms, while the\ncontroller runs at Ts = 10 ms and measurements are logged at Tlog.\nPaper example. Because equation (1) produces the tension trajectories y, it directly feeds the one-step prediction residual in equation (7). The\npaper’s logging result follows from this: under noise-free conditions τmin/Tlog ≥ 5 is sufficient for sub-3% SysID error, while under sensor\nnoise Tlog = 10-20 ms becomes optimal.\n(2). Roller velocity dynamics\nv̇i = (Ri\n2/Ji)(Ti+1 − Ti) − (fi/Ji)vi + (Ri/Ji)ui\n(2)\nEquation (2) is the roller-side dynamic equation. Tension differences accelerate or decelerate the roller through R2/J, frict"
+    },
+    {
+      "page": 2,
+      "number": 7,
+      "context": " term accounts for convective transport of tension into and out of a span. The boundary\ncondition is T0 = T4 = 0 for the free spans before the unwinder and after the rewinder.\nThis equation is the tension side of the simulator. It is integrated with equation (2) using RK4 at Δt = 1 ms, while the\ncontroller runs at Ts = 10 ms and measurements are logged at Tlog.\nPaper example. Because equation (1) produces the tension trajectories y, it directly feeds the one-step prediction residual in equation (7). The\npaper’s logging result follows from this: under noise-free conditions τmin/Tlog ≥ 5 is sufficient for sub-3% SysID error, while under sensor\nnoise Tlog = 10-20 ms becomes optimal.\n(2). Roller velocity dynamics\nv̇i = (Ri\n2/Ji)(Ti+1 − Ti) − (fi/Ji)vi + (Ri/Ji)ui\n(2)\nEquation (2) is the roller-side dynamic equation. Tension differences accelerate or decelerate the roller through R2/J, friction\ndamps velocity through f/J, and motor torque enters through R/J. This is why the paper later estimat"
+    },
+    {
+      "page": 2,
+      "number": 2,
+      "context": " is the tension side of the simulator. It is integrated with equation (2) using RK4 at Δt = 1 ms, while the\ncontroller runs at Ts = 10 ms and measurements are logged at Tlog.\nPaper example. Because equation (1) produces the tension trajectories y, it directly feeds the one-step prediction residual in equation (7). The\npaper’s logging result follows from this: under noise-free conditions τmin/Tlog ≥ 5 is sufficient for sub-3% SysID error, while under sensor\nnoise Tlog = 10-20 ms becomes optimal.\n(2). Roller velocity dynamics\nv̇i = (Ri\n2/Ji)(Ti+1 − Ti) − (fi/Ji)vi + (Ri/Ji)ui\n(2)\nEquation (2) is the roller-side dynamic equation. Tension differences accelerate or decelerate the roller through R2/J, friction\ndamps velocity through f/J, and motor torque enters through R/J. This is why the paper later estimates ratio parameters instead\nof raw R, J, and f.\nEquation (2) also clarifies the drift story. J appears in every denominator, so inertia drift changes the tension-coupling,\nfriction, and tor"
+    },
+    {
+      "page": 2,
+      "number": 2,
+      "context": "K4 at Δt = 1 ms, while the\ncontroller runs at Ts = 10 ms and measurements are logged at Tlog.\nPaper example. Because equation (1) produces the tension trajectories y, it directly feeds the one-step prediction residual in equation (7). The\npaper’s logging result follows from this: under noise-free conditions τmin/Tlog ≥ 5 is sufficient for sub-3% SysID error, while under sensor\nnoise Tlog = 10-20 ms becomes optimal.\n(2). Roller velocity dynamics\nv̇i = (Ri\n2/Ji)(Ti+1 − Ti) − (fi/Ji)vi + (Ri/Ji)ui\n(2)\nEquation (2) is the roller-side dynamic equation. Tension differences accelerate or decelerate the roller through R2/J, friction\ndamps velocity through f/J, and motor torque enters through R/J. This is why the paper later estimates ratio parameters instead\nof raw R, J, and f.\nEquation (2) also clarifies the drift story. J appears in every denominator, so inertia drift changes the tension-coupling,\nfriction, and torque paths simultaneously. EA appears in the web equation but not directly in thes"
+    },
+    {
+      "page": 2,
+      "number": 2,
+      "context": "ms, while the\ncontroller runs at Ts = 10 ms and measurements are logged at Tlog.\nPaper example. Because equation (1) produces the tension trajectories y, it directly feeds the one-step prediction residual in equation (7). The\npaper’s logging result follows from this: under noise-free conditions τmin/Tlog ≥ 5 is sufficient for sub-3% SysID error, while under sensor\nnoise Tlog = 10-20 ms becomes optimal.\n(2). Roller velocity dynamics\nv̇i = (Ri\n2/Ji)(Ti+1 − Ti) − (fi/Ji)vi + (Ri/Ji)ui\n(2)\nEquation (2) is the roller-side dynamic equation. Tension differences accelerate or decelerate the roller through R2/J, friction\ndamps velocity through f/J, and motor torque enters through R/J. This is why the paper later estimates ratio parameters instead\nof raw R, J, and f.\nEquation (2) also clarifies the drift story. J appears in every denominator, so inertia drift changes the tension-coupling,\nfriction, and torque paths simultaneously. EA appears in the web equation but not directly in these roller rati"
+    },
+    {
+      "page": 2,
+      "number": 2,
+      "context": "se-free conditions τmin/Tlog ≥ 5 is sufficient for sub-3% SysID error, while under sensor\nnoise Tlog = 10-20 ms becomes optimal.\n(2). Roller velocity dynamics\nv̇i = (Ri\n2/Ji)(Ti+1 − Ti) − (fi/Ji)vi + (Ri/Ji)ui\n(2)\nEquation (2) is the roller-side dynamic equation. Tension differences accelerate or decelerate the roller through R2/J, friction\ndamps velocity through f/J, and motor torque enters through R/J. This is why the paper later estimates ratio parameters instead\nof raw R, J, and f.\nEquation (2) also clarifies the drift story. J appears in every denominator, so inertia drift changes the tension-coupling,\nfriction, and torque paths simultaneously. EA appears in the web equation but not directly in these roller ratios.\nPaper example. The drift study reports that asymmetric J drift (UW −50%, RW +100%) causes the largest degradation: RMSEθ = 39.3%\nunder NF and 43.6% under SN. That is consistent with equation (2), where changing J changes all roller dynamic coefficients.\n(3). Outer-loop ten"
+    },
+    {
+      "page": 2,
+      "number": 2,
+      "context": "he paper later estimates ratio parameters instead\nof raw R, J, and f.\nEquation (2) also clarifies the drift story. J appears in every denominator, so inertia drift changes the tension-coupling,\nfriction, and torque paths simultaneously. EA appears in the web equation but not directly in these roller ratios.\nPaper example. The drift study reports that asymmetric J drift (UW −50%, RW +100%) causes the largest degradation: RMSEθ = 39.3%\nunder NF and 43.6% under SN. That is consistent with equation (2), where changing J changes all roller dynamic coefficients.\n(3). Outer-loop tension PI velocity correction\nvcorr,i = (Li/EA)K*\np [σiei + (1/TI)∫0\ntσiei(τ)dτ]\n(3)\nei = Tref,i − Tmeas,i,   σi ∈ {−1, +1, +1},   K*\np = KpEA/L\nU-3a\nωref,i = ωss,i + vcorr,i/Ri\nU-3b\nThe outer controller converts a measured tension error into a surface-velocity correction. The paper emphasizes the\nnormalization: L/EA in equation (3) cancels with EA/L in equation (1). Therefore K*\np behaves as a plant-independent tension"
+    },
+    {
+      "page": 2,
+      "number": 3,
+      "context": "and f.\nEquation (2) also clarifies the drift story. J appears in every denominator, so inertia drift changes the tension-coupling,\nfriction, and torque paths simultaneously. EA appears in the web equation but not directly in these roller ratios.\nPaper example. The drift study reports that asymmetric J drift (UW −50%, RW +100%) causes the largest degradation: RMSEθ = 39.3%\nunder NF and 43.6% under SN. That is consistent with equation (2), where changing J changes all roller dynamic coefficients.\n(3). Outer-loop tension PI velocity correction\nvcorr,i = (Li/EA)K*\np [σiei + (1/TI)∫0\ntσiei(τ)dτ]\n(3)\nei = Tref,i − Tmeas,i,   σi ∈ {−1, +1, +1},   K*\np = KpEA/L\nU-3a\nωref,i = ωss,i + vcorr,i/Ri\nU-3b\nThe outer controller converts a measured tension error into a surface-velocity correction. The paper emphasizes the\nnormalization: L/EA in equation (3) cancels with EA/L in equation (1). Therefore K*\np behaves as a plant-independent tension\ncorrection rate rather than a raw gain tied to one plant.\nPape"
+    },
+    {
+      "page": 2,
+      "number": 3,
+      "context": "ft changes the tension-coupling,\nfriction, and torque paths simultaneously. EA appears in the web equation but not directly in these roller ratios.\nPaper example. The drift study reports that asymmetric J drift (UW −50%, RW +100%) causes the largest degradation: RMSEθ = 39.3%\nunder NF and 43.6% under SN. That is consistent with equation (2), where changing J changes all roller dynamic coefficients.\n(3). Outer-loop tension PI velocity correction\nvcorr,i = (Li/EA)K*\np [σiei + (1/TI)∫0\ntσiei(τ)dτ]\n(3)\nei = Tref,i − Tmeas,i,   σi ∈ {−1, +1, +1},   K*\np = KpEA/L\nU-3a\nωref,i = ωss,i + vcorr,i/Ri\nU-3b\nThe outer controller converts a measured tension error into a surface-velocity correction. The paper emphasizes the\nnormalization: L/EA in equation (3) cancels with EA/L in equation (1). Therefore K*\np behaves as a plant-independent tension\ncorrection rate rather than a raw gain tied to one plant.\nPaper example. Section 3.5 uses K*\np as an information-content knob. Under SN at Tlog = 20 ms and LPF "
+    },
+    {
+      "page": 2,
+      "number": 3,
+      "context": "degradation: RMSEθ = 39.3%\nunder NF and 43.6% under SN. That is consistent with equation (2), where changing J changes all roller dynamic coefficients.\n(3). Outer-loop tension PI velocity correction\nvcorr,i = (Li/EA)K*\np [σiei + (1/TI)∫0\ntσiei(τ)dτ]\n(3)\nei = Tref,i − Tmeas,i,   σi ∈ {−1, +1, +1},   K*\np = KpEA/L\nU-3a\nωref,i = ωss,i + vcorr,i/Ri\nU-3b\nThe outer controller converts a measured tension error into a surface-velocity correction. The paper emphasizes the\nnormalization: L/EA in equation (3) cancels with EA/L in equation (1). Therefore K*\np behaves as a plant-independent tension\ncorrection rate rather than a raw gain tied to one plant.\nPaper example. Section 3.5 uses K*\np as an information-content knob. Under SN at Tlog = 20 ms and LPF = 100 Hz, K*\np = 200 gives the\nlowest overall median RMSEθ (18.6%), while K*\np = 100 is recommended overall because it balances NF and SN behavior.\n(4). Inner-loop velocity P plus feedforward torque\nui = Kvel,i(ωref,i − ωi) + uff,i\n(4)\nKvel,i = αJiωn"
+    },
+    {
+      "page": 2,
+      "number": 1,
+      "context": "F and 43.6% under SN. That is consistent with equation (2), where changing J changes all roller dynamic coefficients.\n(3). Outer-loop tension PI velocity correction\nvcorr,i = (Li/EA)K*\np [σiei + (1/TI)∫0\ntσiei(τ)dτ]\n(3)\nei = Tref,i − Tmeas,i,   σi ∈ {−1, +1, +1},   K*\np = KpEA/L\nU-3a\nωref,i = ωss,i + vcorr,i/Ri\nU-3b\nThe outer controller converts a measured tension error into a surface-velocity correction. The paper emphasizes the\nnormalization: L/EA in equation (3) cancels with EA/L in equation (1). Therefore K*\np behaves as a plant-independent tension\ncorrection rate rather than a raw gain tied to one plant.\nPaper example. Section 3.5 uses K*\np as an information-content knob. Under SN at Tlog = 20 ms and LPF = 100 Hz, K*\np = 200 gives the\nlowest overall median RMSEθ (18.6%), while K*\np = 100 is recommended overall because it balances NF and SN behavior.\n(4). Inner-loop velocity P plus feedforward torque\nui = Kvel,i(ωref,i − ωi) + uff,i\n(4)\nKvel,i = αJiωn,i,   ωn,i = √(EA Ri\n2/(JiLi)),   "
+    },
+    {
+      "page": 2,
+      "number": 4,
+      "context": "error into a surface-velocity correction. The paper emphasizes the\nnormalization: L/EA in equation (3) cancels with EA/L in equation (1). Therefore K*\np behaves as a plant-independent tension\ncorrection rate rather than a raw gain tied to one plant.\nPaper example. Section 3.5 uses K*\np as an information-content knob. Under SN at Tlog = 20 ms and LPF = 100 Hz, K*\np = 200 gives the\nlowest overall median RMSEθ (18.6%), while K*\np = 100 is recommended overall because it balances NF and SN behavior.\n(4). Inner-loop velocity P plus feedforward torque\nui = Kvel,i(ωref,i − ωi) + uff,i\n(4)\nKvel,i = αJiωn,i,   ωn,i = √(EA Ri\n2/(JiLi)),   α = 1.4\nU-4a\nEquation (4) is the inner velocity controller. It takes the angular-velocity target produced by equation (3), compares it to the\nmeasured roller speed, and adds feedforward. The velocity gain is auto-tuned from plant parameters through a natural-\nfrequency expression.\nWhen equation (4) is combined with equation (2), motor torque enters roller accelerat"
+    },
+    {
+      "page": 2,
+      "number": 4,
+      "context": "EA in equation (3) cancels with EA/L in equation (1). Therefore K*\np behaves as a plant-independent tension\ncorrection rate rather than a raw gain tied to one plant.\nPaper example. Section 3.5 uses K*\np as an information-content knob. Under SN at Tlog = 20 ms and LPF = 100 Hz, K*\np = 200 gives the\nlowest overall median RMSEθ (18.6%), while K*\np = 100 is recommended overall because it balances NF and SN behavior.\n(4). Inner-loop velocity P plus feedforward torque\nui = Kvel,i(ωref,i − ωi) + uff,i\n(4)\nKvel,i = αJiωn,i,   ωn,i = √(EA Ri\n2/(JiLi)),   α = 1.4\nU-4a\nEquation (4) is the inner velocity controller. It takes the angular-velocity target produced by equation (3), compares it to the\nmeasured roller speed, and adds feedforward. The velocity gain is auto-tuned from plant parameters through a natural-\nfrequency expression.\nWhen equation (4) is combined with equation (2), motor torque enters roller acceleration. This cascade loop adds damping\nand reshapes the transient response, which chang"
+    },
+    {
+      "page": 2,
+      "number": 4,
+      "context": "es as a plant-independent tension\ncorrection rate rather than a raw gain tied to one plant.\nPaper example. Section 3.5 uses K*\np as an information-content knob. Under SN at Tlog = 20 ms and LPF = 100 Hz, K*\np = 200 gives the\nlowest overall median RMSEθ (18.6%), while K*\np = 100 is recommended overall because it balances NF and SN behavior.\n(4). Inner-loop velocity P plus feedforward torque\nui = Kvel,i(ωref,i − ωi) + uff,i\n(4)\nKvel,i = αJiωn,i,   ωn,i = √(EA Ri\n2/(JiLi)),   α = 1.4\nU-4a\nEquation (4) is the inner velocity controller. It takes the angular-velocity target produced by equation (3), compares it to the\nmeasured roller speed, and adds feedforward. The velocity gain is auto-tuned from plant parameters through a natural-\nfrequency expression.\nWhen equation (4) is combined with equation (2), motor torque enters roller acceleration. This cascade loop adds damping\nand reshapes the transient response, which changes which SysID indicators are useful.\nPaper example. The paper reports tha"
+    },
+    {
+      "page": 2,
+      "number": 3,
+      "context": "r example. Section 3.5 uses K*\np as an information-content knob. Under SN at Tlog = 20 ms and LPF = 100 Hz, K*\np = 200 gives the\nlowest overall median RMSEθ (18.6%), while K*\np = 100 is recommended overall because it balances NF and SN behavior.\n(4). Inner-loop velocity P plus feedforward torque\nui = Kvel,i(ωref,i − ωi) + uff,i\n(4)\nKvel,i = αJiωn,i,   ωn,i = √(EA Ri\n2/(JiLi)),   α = 1.4\nU-4a\nEquation (4) is the inner velocity controller. It takes the angular-velocity target produced by equation (3), compares it to the\nmeasured roller speed, and adds feedforward. The velocity gain is auto-tuned from plant parameters through a natural-\nfrequency expression.\nWhen equation (4) is combined with equation (2), motor torque enters roller acceleration. This cascade loop adds damping\nand reshapes the transient response, which changes which SysID indicators are useful.\nPaper example. The paper reports that ζCL,min collapses to approximately 0.001 under cascade control and loses correlation with SysI"
+    },
+    {
+      "page": 2,
+      "number": 4,
+      "context": " 100 is recommended overall because it balances NF and SN behavior.\n(4). Inner-loop velocity P plus feedforward torque\nui = Kvel,i(ωref,i − ωi) + uff,i\n(4)\nKvel,i = αJiωn,i,   ωn,i = √(EA Ri\n2/(JiLi)),   α = 1.4\nU-4a\nEquation (4) is the inner velocity controller. It takes the angular-velocity target produced by equation (3), compares it to the\nmeasured roller speed, and adds feedforward. The velocity gain is auto-tuned from plant parameters through a natural-\nfrequency expression.\nWhen equation (4) is combined with equation (2), motor torque enters roller acceleration. This cascade loop adds damping\nand reshapes the transient response, which changes which SysID indicators are useful.\nPaper example. The paper reports that ζCL,min collapses to approximately 0.001 under cascade control and loses correlation with SysID\naccuracy (Spearman ρ = −0.19, p = 0.43). Therefore K*\np, not ζ, becomes the practical tuning variable.\n"
+    },
+    {
+      "page": 2,
+      "number": 2,
+      "context": "cause it balances NF and SN behavior.\n(4). Inner-loop velocity P plus feedforward torque\nui = Kvel,i(ωref,i − ωi) + uff,i\n(4)\nKvel,i = αJiωn,i,   ωn,i = √(EA Ri\n2/(JiLi)),   α = 1.4\nU-4a\nEquation (4) is the inner velocity controller. It takes the angular-velocity target produced by equation (3), compares it to the\nmeasured roller speed, and adds feedforward. The velocity gain is auto-tuned from plant parameters through a natural-\nfrequency expression.\nWhen equation (4) is combined with equation (2), motor torque enters roller acceleration. This cascade loop adds damping\nand reshapes the transient response, which changes which SysID indicators are useful.\nPaper example. The paper reports that ζCL,min collapses to approximately 0.001 under cascade control and loses correlation with SysID\naccuracy (Spearman ρ = −0.19, p = 0.43). Therefore K*\np, not ζ, becomes the practical tuning variable.\n"
+    },
+    {
+      "page": 3,
+      "number": 5,
+      "context": "(5). Measurement-based feedforward\nuff,i = ±TmeasRi + fiωi\n(5)\nuff = [T0R0, (T2−T1)R1, −T2R2]⊤ + f ⊙ ω\nFig. 1\nFeedforward supplies torque for measured tension load and friction. The key paper-specific point is that this feedforward is\nmeasurement-based, so it does not depend entirely on the current model parameters. That is why it can absorb some parameter\ndrift during operation.\nPaper example. The paper’s drift analysis says EA drift is largely absorbed by cascade feedforward, with median RMSEθ ar"
+    },
+    {
+      "page": 3,
+      "number": 5,
+      "context": "(5). Measurement-based feedforward\nuff,i = ±TmeasRi + fiωi\n(5)\nuff = [T0R0, (T2−T1)R1, −T2R2]⊤ + f ⊙ ω\nFig. 1\nFeedforward supplies torque for measured tension load and friction. The key paper-specific point is that this feedforward is\nmeasurement-based, so it does not depend entirely on the current model parameters. That is why it can absorb some parameter\ndrift during operation.\nPaper example. The paper’s drift analysis says EA drift is largely absorbed by cascade feedforward, with median RMSEθ around 15-18%\nacross ±10% to ±50% EA perturbations. In contra"
+    },
+    {
+      "page": 3,
+      "number": 2,
+      "context": "measured tension load and friction. The key paper-specific point is that this feedforward is\nmeasurement-based, so it does not depend entirely on the current model parameters. That is why it can absorb some parameter\ndrift during operation.\nPaper example. The paper’s drift analysis says EA drift is largely absorbed by cascade feedforward, with median RMSEθ around 15-18%\nacross ±10% to ±50% EA perturbations. In contrast, J drift remains damaging because it changes the roller dynamics in equation (2).\n(6). Ratio-parameter SysID formulation\nkt,i = Ri\n2/Ji,   kf,i = fi/Ji,   ku,i = Ri/Ji\n(6)\nθ = [kt,UW, kt,Nip, kt,RW, kf,UW, kf,Nip, kf,RW, EA] ∈ R7\nU-6a\nThe paper does not estimate raw R, J, and f directly. It estimates the combinations that actually appear in equation (2). Since R\nand L can be measured on the line, ku,i can be derived rather than estimated independently, leaving seven identifiable\nparameters.\nPaper example. Per-roller SysID error asymmetry is used as a drift-source indicator."
+    },
+    {
+      "page": 3,
+      "number": 6,
+      "context": "red tension load and friction. The key paper-specific point is that this feedforward is\nmeasurement-based, so it does not depend entirely on the current model parameters. That is why it can absorb some parameter\ndrift during operation.\nPaper example. The paper’s drift analysis says EA drift is largely absorbed by cascade feedforward, with median RMSEθ around 15-18%\nacross ±10% to ±50% EA perturbations. In contrast, J drift remains damaging because it changes the roller dynamics in equation (2).\n(6). Ratio-parameter SysID formulation\nkt,i = Ri\n2/Ji,   kf,i = fi/Ji,   ku,i = Ri/Ji\n(6)\nθ = [kt,UW, kt,Nip, kt,RW, kf,UW, kf,Nip, kf,RW, EA] ∈ R7\nU-6a\nThe paper does not estimate raw R, J, and f directly. It estimates the combinations that actually appear in equation (2). Since R\nand L can be measured on the line, ku,i can be derived rather than estimated independently, leaving seven identifiable\nparameters.\nPaper example. Per-roller SysID error asymmetry is used as a drift-source indicator. The "
+    },
+    {
+      "page": 3,
+      "number": 6,
+      "context": "s\nmeasurement-based, so it does not depend entirely on the current model parameters. That is why it can absorb some parameter\ndrift during operation.\nPaper example. The paper’s drift analysis says EA drift is largely absorbed by cascade feedforward, with median RMSEθ around 15-18%\nacross ±10% to ±50% EA perturbations. In contrast, J drift remains damaging because it changes the roller dynamics in equation (2).\n(6). Ratio-parameter SysID formulation\nkt,i = Ri\n2/Ji,   kf,i = fi/Ji,   ku,i = Ri/Ji\n(6)\nθ = [kt,UW, kt,Nip, kt,RW, kf,UW, kf,Nip, kf,RW, EA] ∈ R7\nU-6a\nThe paper does not estimate raw R, J, and f directly. It estimates the combinations that actually appear in equation (2). Since R\nand L can be measured on the line, ku,i can be derived rather than estimated independently, leaving seven identifiable\nparameters.\nPaper example. Per-roller SysID error asymmetry is used as a drift-source indicator. The paper gives the example kt,UW ≠ kt,RW and reports\nthat under asymmetric J drift, UW ha"
+    },
+    {
+      "page": 3,
+      "number": 2,
+      "context": "nalysis says EA drift is largely absorbed by cascade feedforward, with median RMSEθ around 15-18%\nacross ±10% to ±50% EA perturbations. In contrast, J drift remains damaging because it changes the roller dynamics in equation (2).\n(6). Ratio-parameter SysID formulation\nkt,i = Ri\n2/Ji,   kf,i = fi/Ji,   ku,i = Ri/Ji\n(6)\nθ = [kt,UW, kt,Nip, kt,RW, kf,UW, kf,Nip, kf,RW, EA] ∈ R7\nU-6a\nThe paper does not estimate raw R, J, and f directly. It estimates the combinations that actually appear in equation (2). Since R\nand L can be measured on the line, ku,i can be derived rather than estimated independently, leaving seven identifiable\nparameters.\nPaper example. Per-roller SysID error asymmetry is used as a drift-source indicator. The paper gives the example kt,UW ≠ kt,RW and reports\nthat under asymmetric J drift, UW has much larger errors than Nip because UW is directly affected while Nip is mainly indirectly coupled.\n(7). One-step prediction-error cost\nJ(θ) = Σk=1\nN ||yk − ŷk(θ)||2\n(7)\nThis is the "
+    },
+    {
+      "page": 3,
+      "number": 7,
+      "context": "and f directly. It estimates the combinations that actually appear in equation (2). Since R\nand L can be measured on the line, ku,i can be derived rather than estimated independently, leaving seven identifiable\nparameters.\nPaper example. Per-roller SysID error asymmetry is used as a drift-source indicator. The paper gives the example kt,UW ≠ kt,RW and reports\nthat under asymmetric J drift, UW has much larger errors than Nip because UW is directly affected while Nip is mainly indirectly coupled.\n(7). One-step prediction-error cost\nJ(θ) = Σk=1\nN ||yk − ŷk(θ)||2\n(7)\nThis is the central SysID objective. For a candidate θ, the simulator predicts tension measurements ŷk(θ) at logged sampling\ninstants. The optimizer searches for θ that minimizes squared prediction error against measured yk.\nThe equation also explains why acquisition choices matter. If Tlog is too small under sensor noise, finite-difference noise is\namplified. If Tlog is too large, dynamic information is lost. If LPF is too aggre"
+    },
+    {
+      "page": 3,
+      "number": 7,
+      "context": " in equation (2). Since R\nand L can be measured on the line, ku,i can be derived rather than estimated independently, leaving seven identifiable\nparameters.\nPaper example. Per-roller SysID error asymmetry is used as a drift-source indicator. The paper gives the example kt,UW ≠ kt,RW and reports\nthat under asymmetric J drift, UW has much larger errors than Nip because UW is directly affected while Nip is mainly indirectly coupled.\n(7). One-step prediction-error cost\nJ(θ) = Σk=1\nN ||yk − ŷk(θ)||2\n(7)\nThis is the central SysID objective. For a candidate θ, the simulator predicts tension measurements ŷk(θ) at logged sampling\ninstants. The optimizer searches for θ that minimizes squared prediction error against measured yk.\nThe equation also explains why acquisition choices matter. If Tlog is too small under sensor noise, finite-difference noise is\namplified. If Tlog is too large, dynamic information is lost. If LPF is too aggressive, relevant oscillatory dynamics are\nsuppressed.\nPaper example"
+    },
+    {
+      "page": 3,
+      "number": 8,
+      "context": " also explains why acquisition choices matter. If Tlog is too small under sensor noise, finite-difference noise is\namplified. If Tlog is too large, dynamic information is lost. If LPF is too aggressive, relevant oscillatory dynamics are\nsuppressed.\nPaper example. The paper reports a U-shaped noisy logging response: Tlog = 1 ms exceeds 169% median RMSEθ, while Tlog = 20 ms gives\n23.2% under the stated SN case. LPF = 50 Hz stabilizes convergence, while LPF = 10 Hz causes 100% convergence failure.\n(8). Multi-condition prediction-error cost\nJmulti(θ) = Σc=1\nCΣk=1\nNc ||yk\n(c) − ŷk\n(c)(θ)||2\n(8)\nEquation (8) extends equation (7) by summing residuals across C excitation conditions. This gives the optimizer more\nindependent information and reduces shallow or ambiguous cost landscapes.\nPaper example. Under NF, even single-channel excitation ET1 reaches RMSEθ = 2.5%. Under SN, richer multi-channel excitation matters:\nE_Toggle achieves 20.4%, ET6 21.0%, and EVR 25.1%, while ET1 is worse at 31.4%.\nU-"
+    },
+    {
+      "page": 3,
+      "number": 8,
+      "context": "e-difference noise is\namplified. If Tlog is too large, dynamic information is lost. If LPF is too aggressive, relevant oscillatory dynamics are\nsuppressed.\nPaper example. The paper reports a U-shaped noisy logging response: Tlog = 1 ms exceeds 169% median RMSEθ, while Tlog = 20 ms gives\n23.2% under the stated SN case. LPF = 50 Hz stabilizes convergence, while LPF = 10 Hz causes 100% convergence failure.\n(8). Multi-condition prediction-error cost\nJmulti(θ) = Σc=1\nCΣk=1\nNc ||yk\n(c) − ŷk\n(c)(θ)||2\n(8)\nEquation (8) extends equation (7) by summing residuals across C excitation conditions. This gives the optimizer more\nindependent information and reduces shallow or ambiguous cost landscapes.\nPaper example. Under NF, even single-channel excitation ET1 reaches RMSEθ = 2.5%. Under SN, richer multi-channel excitation matters:\nE_Toggle achieves 20.4%, ET6 21.0%, and EVR 25.1%, while ET1 is worse at 31.4%.\nU-8. Initial guesses and SysID accuracy metrics\nθinit = αθtrue,   α ∈ {1.5, 2, 5, 10, 50}\nU-8a\n"
+    },
+    {
+      "page": 3,
+      "number": 8,
+      "context": "noise is\namplified. If Tlog is too large, dynamic information is lost. If LPF is too aggressive, relevant oscillatory dynamics are\nsuppressed.\nPaper example. The paper reports a U-shaped noisy logging response: Tlog = 1 ms exceeds 169% median RMSEθ, while Tlog = 20 ms gives\n23.2% under the stated SN case. LPF = 50 Hz stabilizes convergence, while LPF = 10 Hz causes 100% convergence failure.\n(8). Multi-condition prediction-error cost\nJmulti(θ) = Σc=1\nCΣk=1\nNc ||yk\n(c) − ŷk\n(c)(θ)||2\n(8)\nEquation (8) extends equation (7) by summing residuals across C excitation conditions. This gives the optimizer more\nindependent information and reduces shallow or ambiguous cost landscapes.\nPaper example. Under NF, even single-channel excitation ET1 reaches RMSEθ = 2.5%. Under SN, richer multi-channel excitation matters:\nE_Toggle achieves 20.4%, ET6 21.0%, and EVR 25.1%, while ET1 is worse at 31.4%.\nU-8. Initial guesses and SysID accuracy metrics\nθinit = αθtrue,   α ∈ {1.5, 2, 5, 10, 50}\nU-8a\nerrorj = |θes"
+    },
+    {
+      "page": 3,
+      "number": 7,
+      "context": "f Tlog is too large, dynamic information is lost. If LPF is too aggressive, relevant oscillatory dynamics are\nsuppressed.\nPaper example. The paper reports a U-shaped noisy logging response: Tlog = 1 ms exceeds 169% median RMSEθ, while Tlog = 20 ms gives\n23.2% under the stated SN case. LPF = 50 Hz stabilizes convergence, while LPF = 10 Hz causes 100% convergence failure.\n(8). Multi-condition prediction-error cost\nJmulti(θ) = Σc=1\nCΣk=1\nNc ||yk\n(c) − ŷk\n(c)(θ)||2\n(8)\nEquation (8) extends equation (7) by summing residuals across C excitation conditions. This gives the optimizer more\nindependent information and reduces shallow or ambiguous cost landscapes.\nPaper example. Under NF, even single-channel excitation ET1 reaches RMSEθ = 2.5%. Under SN, richer multi-channel excitation matters:\nE_Toggle achieves 20.4%, ET6 21.0%, and EVR 25.1%, while ET1 is worse at 31.4%.\nU-8. Initial guesses and SysID accuracy metrics\nθinit = αθtrue,   α ∈ {1.5, 2, 5, 10, 50}\nU-8a\nerrorj = |θest,j − θtrue,j|/θtrue,"
+    },
+    {
+      "page": 4,
+      "number": 9,
+      "context": "(9). Channel-weighted retuning score\nS = Σi=1\nnwi( RMSEi/1 + OSi/100 + t90,i/15 + Utotal,i/200)\n(9)\nwi = |ΔTref,i| / Σj|ΔTref,j|\nU-9a\nRMSEi = √(N−1Σk(Ti(tk) − Tref,i)2)\nU-9b\nOSi = max(0, (Ti,peak − Tref,i\nnew)/|ΔTref,i|) × 100,   Utotal,i = ∫0\nTsimui\n2(t)dt\nU-9c\nEquation (9) is the paper’s retuning objective. It combines four practical concerns: tracking error, overshoot, rise time to 90%,\nand total squared control effort. The weights prioritize spans with larger reference-tension changes.\nPaper ex"
+    },
+    {
+      "page": 4,
+      "number": 9,
+      "context": "(9). Channel-weighted retuning score\nS = Σi=1\nnwi( RMSEi/1 + OSi/100 + t90,i/15 + Utotal,i/200)\n(9)\nwi = |ΔTref,i| / Σj|ΔTref,j|\nU-9a\nRMSEi = √(N−1Σk(Ti(tk) − Tref,i)2)\nU-9b\nOSi = max(0, (Ti,peak − Tref,i\nnew)/|ΔTref,i|) × 100,   Utotal,i = ∫0\nTsimui\n2(t)dt\nU-9c\nEquation (9) is the paper’s retuning objective. It combines four practical concerns: tracking error, overshoot, rise time to 90%,\nand total squared control effort. The weights prioritize spans with larger reference-tension changes.\nPaper example. Table 3 and Figure 10 use S to compare retuning strategies. HGS+BO(5) achieves median cos"
+    },
+    {
+      "page": 4,
+      "number": 9,
+      "context": "(9). Channel-weighted retuning score\nS = Σi=1\nnwi( RMSEi/1 + OSi/100 + t90,i/15 + Utotal,i/200)\n(9)\nwi = |ΔTref,i| / Σj|ΔTref,j|\nU-9a\nRMSEi = √(N−1Σk(Ti(tk) − Tref,i)2)\nU-9b\nOSi = max(0, (Ti,peak − Tref,i\nnew)/|ΔTref,i|) × 100,   Utotal,i = ∫0\nTsimui\n2(t)dt\nU-9c\nEquation (9) is the paper’s retuning objective. It combines four practical concerns: tracking error, overshoot, rise time to 90%,\nand total squared control effort. The weights prioritize spans with larger reference-tension changes.\nPaper example. Table 3 and Figure 10 use S to compare retuning strategies. HGS+BO(5) achieves median cost 0.342 with 5 real evaluations,\nlower than CS-BO(30) at 0.407, giving the paper’s reported 83% real-evaluation reduction.\nU-10. Deployment rules derived from the equations\nτmi"
+    },
+    {
+      "page": 4,
+      "number": 5,
+      "context": "/15 + Utotal,i/200)\n(9)\nwi = |ΔTref,i| / Σj|ΔTref,j|\nU-9a\nRMSEi = √(N−1Σk(Ti(tk) − Tref,i)2)\nU-9b\nOSi = max(0, (Ti,peak − Tref,i\nnew)/|ΔTref,i|) × 100,   Utotal,i = ∫0\nTsimui\n2(t)dt\nU-9c\nEquation (9) is the paper’s retuning objective. It combines four practical concerns: tracking error, overshoot, rise time to 90%,\nand total squared control effort. The weights prioritize spans with larger reference-tension changes.\nPaper example. Table 3 and Figure 10 use S to compare retuning strategies. HGS+BO(5) achieves median cost 0.342 with 5 real evaluations,\nlower than CS-BO(30) at 0.407, giving the paper’s reported 83% real-evaluation reduction.\nU-10. Deployment rules derived from the equations\nτmin = 1 / maxi(|Re(λi)|)\nU-10a\nNF: τmin/Tlog ≥ 5;   SN: Tlog = 10-20 ms and LPF fc ≥ 50 Hz\nU-10b\nK*\np = 100 default,   K*\np = 200 under high noise;   validate RMSEy < ε and S < Ctarget\nU-10c\nThese are not new governing equations. They are the decision rules the paper derives from the model, SysID objectiv"
+    },
+    {
+      "page": 4,
+      "number": 30,
+      "context": "k(Ti(tk) − Tref,i)2)\nU-9b\nOSi = max(0, (Ti,peak − Tref,i\nnew)/|ΔTref,i|) × 100,   Utotal,i = ∫0\nTsimui\n2(t)dt\nU-9c\nEquation (9) is the paper’s retuning objective. It combines four practical concerns: tracking error, overshoot, rise time to 90%,\nand total squared control effort. The weights prioritize spans with larger reference-tension changes.\nPaper example. Table 3 and Figure 10 use S to compare retuning strategies. HGS+BO(5) achieves median cost 0.342 with 5 real evaluations,\nlower than CS-BO(30) at 0.407, giving the paper’s reported 83% real-evaluation reduction.\nU-10. Deployment rules derived from the equations\nτmin = 1 / maxi(|Re(λi)|)\nU-10a\nNF: τmin/Tlog ≥ 5;   SN: Tlog = 10-20 ms and LPF fc ≥ 50 Hz\nU-10b\nK*\np = 100 default,   K*\np = 200 under high noise;   validate RMSEy < ε and S < Ctarget\nU-10c\nThese are not new governing equations. They are the decision rules the paper derives from the model, SysID objective, and\nretuning score. τmin comes from plant eigenvalues, Tlog and LPF co"
+    },
+    {
+      "page": 4,
+      "number": 1,
+      "context": " data quality, K*\np controls transient information\ncontent, and RMSEy/S validate the digital twin and final gains.\nPaper example. Algorithm 1 and Figure 11 combine these rules into the final protocol: configure logging, set SysID-mode gain, collect toggle\nor multi-channel excitation data, estimate θ̂, build and verify the digital twin, run HGS+few-shot BO, then validate and restore production-\nmode gains.\nHow the Equations Produce the Paper’s Main Results\nData design dominates because equations (1), (2), and (7)\nare sensitive to sampled dynamics. The plant equations\ngenerate tension and velocity transients; equation (7) fits\nthose transients. If logging is too sparse, the residual lacks\ndynamic information. If logging is too fast under noise, the\nderivative-like one-step formulation amplifies noise. This\nproduces the paper’s reversal: NF improves with shorter\nTlog, but SN is best around 10-20 ms with LPF.\nJ drift dominates because equation (2) contains J in all\nthree roller coefficients. "
+    },
+    {
+      "page": 4,
+      "number": 2,
+      "context": " quality, K*\np controls transient information\ncontent, and RMSEy/S validate the digital twin and final gains.\nPaper example. Algorithm 1 and Figure 11 combine these rules into the final protocol: configure logging, set SysID-mode gain, collect toggle\nor multi-channel excitation data, estimate θ̂, build and verify the digital twin, run HGS+few-shot BO, then validate and restore production-\nmode gains.\nHow the Equations Produce the Paper’s Main Results\nData design dominates because equations (1), (2), and (7)\nare sensitive to sampled dynamics. The plant equations\ngenerate tension and velocity transients; equation (7) fits\nthose transients. If logging is too sparse, the residual lacks\ndynamic information. If logging is too fast under noise, the\nderivative-like one-step formulation amplifies noise. This\nproduces the paper’s reversal: NF improves with shorter\nTlog, but SN is best around 10-20 ms with LPF.\nJ drift dominates because equation (2) contains J in all\nthree roller coefficients. Inert"
+    },
+    {
+      "page": 4,
+      "number": 7,
+      "context": " K*\np controls transient information\ncontent, and RMSEy/S validate the digital twin and final gains.\nPaper example. Algorithm 1 and Figure 11 combine these rules into the final protocol: configure logging, set SysID-mode gain, collect toggle\nor multi-channel excitation data, estimate θ̂, build and verify the digital twin, run HGS+few-shot BO, then validate and restore production-\nmode gains.\nHow the Equations Produce the Paper’s Main Results\nData design dominates because equations (1), (2), and (7)\nare sensitive to sampled dynamics. The plant equations\ngenerate tension and velocity transients; equation (7) fits\nthose transients. If logging is too sparse, the residual lacks\ndynamic information. If logging is too fast under noise, the\nderivative-like one-step formulation amplifies noise. This\nproduces the paper’s reversal: NF improves with shorter\nTlog, but SN is best around 10-20 ms with LPF.\nJ drift dominates because equation (2) contains J in all\nthree roller coefficients. Inertia drift "
+    },
+    {
+      "page": 4,
+      "number": 7,
+      "context": "mple. Algorithm 1 and Figure 11 combine these rules into the final protocol: configure logging, set SysID-mode gain, collect toggle\nor multi-channel excitation data, estimate θ̂, build and verify the digital twin, run HGS+few-shot BO, then validate and restore production-\nmode gains.\nHow the Equations Produce the Paper’s Main Results\nData design dominates because equations (1), (2), and (7)\nare sensitive to sampled dynamics. The plant equations\ngenerate tension and velocity transients; equation (7) fits\nthose transients. If logging is too sparse, the residual lacks\ndynamic information. If logging is too fast under noise, the\nderivative-like one-step formulation amplifies noise. This\nproduces the paper’s reversal: NF improves with shorter\nTlog, but SN is best around 10-20 ms with LPF.\nJ drift dominates because equation (2) contains J in all\nthree roller coefficients. Inertia drift affects tension\ncoupling, friction damping, and torque response together.\nEA drift affects equation (1), but e"
+    },
+    {
+      "page": 4,
+      "number": 2,
+      "context": "sults\nData design dominates because equations (1), (2), and (7)\nare sensitive to sampled dynamics. The plant equations\ngenerate tension and velocity transients; equation (7) fits\nthose transients. If logging is too sparse, the residual lacks\ndynamic information. If logging is too fast under noise, the\nderivative-like one-step formulation amplifies noise. This\nproduces the paper’s reversal: NF improves with shorter\nTlog, but SN is best around 10-20 ms with LPF.\nJ drift dominates because equation (2) contains J in all\nthree roller coefficients. Inertia drift affects tension\ncoupling, friction damping, and torque response together.\nEA drift affects equation (1), but equation (5) partially\ncompensates measured tension effects under cascade\nfeedforward. This explains the paper’s conclusion that J\ndrift, not EA drift, is the dominant degradation driver under\ncascade control.\nK*\np replaces ζ because equation (3) directly shapes\ninformative transients. The cascade inner loop in equation\n(4) compr"
+    },
+    {
+      "page": 4,
+      "number": 1,
+      "context": "uation (7) fits\nthose transients. If logging is too sparse, the residual lacks\ndynamic information. If logging is too fast under noise, the\nderivative-like one-step formulation amplifies noise. This\nproduces the paper’s reversal: NF improves with shorter\nTlog, but SN is best around 10-20 ms with LPF.\nJ drift dominates because equation (2) contains J in all\nthree roller coefficients. Inertia drift affects tension\ncoupling, friction damping, and torque response together.\nEA drift affects equation (1), but equation (5) partially\ncompensates measured tension effects under cascade\nfeedforward. This explains the paper’s conclusion that J\ndrift, not EA drift, is the dominant degradation driver under\ncascade control.\nK*\np replaces ζ because equation (3) directly shapes\ninformative transients. The cascade inner loop in equation\n(4) compresses ζCL,min, so damping ratio no longer\nseparates good and bad SysID cases. K*\np remains actionable\nbecause it directly changes the outer-loop velocity\ncorrectio"
+    },
+    {
+      "page": 4,
+      "number": 5,
+      "context": "ose transients. If logging is too sparse, the residual lacks\ndynamic information. If logging is too fast under noise, the\nderivative-like one-step formulation amplifies noise. This\nproduces the paper’s reversal: NF improves with shorter\nTlog, but SN is best around 10-20 ms with LPF.\nJ drift dominates because equation (2) contains J in all\nthree roller coefficients. Inertia drift affects tension\ncoupling, friction damping, and torque response together.\nEA drift affects equation (1), but equation (5) partially\ncompensates measured tension effects under cascade\nfeedforward. This explains the paper’s conclusion that J\ndrift, not EA drift, is the dominant degradation driver under\ncascade control.\nK*\np replaces ζ because equation (3) directly shapes\ninformative transients. The cascade inner loop in equation\n(4) compresses ζCL,min, so damping ratio no longer\nseparates good and bad SysID cases. K*\np remains actionable\nbecause it directly changes the outer-loop velocity\ncorrection and therefore th"
+    },
+    {
+      "page": 4,
+      "number": 3,
+      "context": "er\nTlog, but SN is best around 10-20 ms with LPF.\nJ drift dominates because equation (2) contains J in all\nthree roller coefficients. Inertia drift affects tension\ncoupling, friction damping, and torque response together.\nEA drift affects equation (1), but equation (5) partially\ncompensates measured tension effects under cascade\nfeedforward. This explains the paper’s conclusion that J\ndrift, not EA drift, is the dominant degradation driver under\ncascade control.\nK*\np replaces ζ because equation (3) directly shapes\ninformative transients. The cascade inner loop in equation\n(4) compresses ζCL,min, so damping ratio no longer\nseparates good and bad SysID cases. K*\np remains actionable\nbecause it directly changes the outer-loop velocity\ncorrection and therefore the richness of data available to\nequation (7).\nMulti-condition excitation helps because equation (8)\nadds independent constraints. One condition can leave\nshallow directions in the cost landscape. Multiple excitation\nconditions add res"
+    },
+    {
+      "page": 4,
+      "number": 4,
+      "context": "ation (2) contains J in all\nthree roller coefficients. Inertia drift affects tension\ncoupling, friction damping, and torque response together.\nEA drift affects equation (1), but equation (5) partially\ncompensates measured tension effects under cascade\nfeedforward. This explains the paper’s conclusion that J\ndrift, not EA drift, is the dominant degradation driver under\ncascade control.\nK*\np replaces ζ because equation (3) directly shapes\ninformative transients. The cascade inner loop in equation\n(4) compresses ζCL,min, so damping ratio no longer\nseparates good and bad SysID cases. K*\np remains actionable\nbecause it directly changes the outer-loop velocity\ncorrection and therefore the richness of data available to\nequation (7).\nMulti-condition excitation helps because equation (8)\nadds independent constraints. One condition can leave\nshallow directions in the cost landscape. Multiple excitation\nconditions add residuals that constrain different parameter\ncombinations, which is why E_Toggle a"
+    },
+    {
+      "page": 4,
+      "number": 7,
+      "context": "ffects under cascade\nfeedforward. This explains the paper’s conclusion that J\ndrift, not EA drift, is the dominant degradation driver under\ncascade control.\nK*\np replaces ζ because equation (3) directly shapes\ninformative transients. The cascade inner loop in equation\n(4) compresses ζCL,min, so damping ratio no longer\nseparates good and bad SysID cases. K*\np remains actionable\nbecause it directly changes the outer-loop velocity\ncorrection and therefore the richness of data available to\nequation (7).\nMulti-condition excitation helps because equation (8)\nadds independent constraints. One condition can leave\nshallow directions in the cost landscape. Multiple excitation\nconditions add residuals that constrain different parameter\ncombinations, which is why E_Toggle and ET6 outperform\nsingle-channel excitation under sensor noise.\nThe digital-twin retuning advantage is measured by\nequation (9). The paper does not only ask whether the\nidentified model is accurate; it asks whether it reduces real-"
+    },
+    {
+      "page": 4,
+      "number": 8,
+      "context": "er’s conclusion that J\ndrift, not EA drift, is the dominant degradation driver under\ncascade control.\nK*\np replaces ζ because equation (3) directly shapes\ninformative transients. The cascade inner loop in equation\n(4) compresses ζCL,min, so damping ratio no longer\nseparates good and bad SysID cases. K*\np remains actionable\nbecause it directly changes the outer-loop velocity\ncorrection and therefore the richness of data available to\nequation (7).\nMulti-condition excitation helps because equation (8)\nadds independent constraints. One condition can leave\nshallow directions in the cost landscape. Multiple excitation\nconditions add residuals that constrain different parameter\ncombinations, which is why E_Toggle and ET6 outperform\nsingle-channel excitation under sensor noise.\nThe digital-twin retuning advantage is measured by\nequation (9). The paper does not only ask whether the\nidentified model is accurate; it asks whether it reduces real-\nplant gain-search cost. Equation (9) makes that compar"
+    },
+    {
+      "page": 4,
+      "number": 9,
+      "context": "tly changes the outer-loop velocity\ncorrection and therefore the richness of data available to\nequation (7).\nMulti-condition excitation helps because equation (8)\nadds independent constraints. One condition can leave\nshallow directions in the cost landscape. Multiple excitation\nconditions add residuals that constrain different parameter\ncombinations, which is why E_Toggle and ET6 outperform\nsingle-channel excitation under sensor noise.\nThe digital-twin retuning advantage is measured by\nequation (9). The paper does not only ask whether the\nidentified model is accurate; it asks whether it reduces real-\nplant gain-search cost. Equation (9) makes that comparison\npossible and leads to the HGS+BO(5) recommendation.\nExtraction Notes\nThe PDF contains numbered equations (1)-(9). Tokens such\nas \nCS-BO(30), \nWS-BO(30), \nHGS+BO(5), \nand\nHGS+BO(10) are method labels or budgets, not additional\nequation \nnumbers. \nSeveral \nimportant \nmathematical\ndefinitions are unnumbered in the paper, so they are labe"
+    },
+    {
+      "page": 4,
+      "number": 9,
+      "context": " because equation (8)\nadds independent constraints. One condition can leave\nshallow directions in the cost landscape. Multiple excitation\nconditions add residuals that constrain different parameter\ncombinations, which is why E_Toggle and ET6 outperform\nsingle-channel excitation under sensor noise.\nThe digital-twin retuning advantage is measured by\nequation (9). The paper does not only ask whether the\nidentified model is accurate; it asks whether it reduces real-\nplant gain-search cost. Equation (9) makes that comparison\npossible and leads to the HGS+BO(5) recommendation.\nExtraction Notes\nThe PDF contains numbered equations (1)-(9). Tokens such\nas \nCS-BO(30), \nWS-BO(30), \nHGS+BO(5), \nand\nHGS+BO(10) are method labels or budgets, not additional\nequation \nnumbers. \nSeveral \nimportant \nmathematical\ndefinitions are unnumbered in the paper, so they are labeled\nU-* in this report.\n"
+    },
+    {
+      "page": 4,
+      "number": 5,
+      "context": "ndition can leave\nshallow directions in the cost landscape. Multiple excitation\nconditions add residuals that constrain different parameter\ncombinations, which is why E_Toggle and ET6 outperform\nsingle-channel excitation under sensor noise.\nThe digital-twin retuning advantage is measured by\nequation (9). The paper does not only ask whether the\nidentified model is accurate; it asks whether it reduces real-\nplant gain-search cost. Equation (9) makes that comparison\npossible and leads to the HGS+BO(5) recommendation.\nExtraction Notes\nThe PDF contains numbered equations (1)-(9). Tokens such\nas \nCS-BO(30), \nWS-BO(30), \nHGS+BO(5), \nand\nHGS+BO(10) are method labels or budgets, not additional\nequation \nnumbers. \nSeveral \nimportant \nmathematical\ndefinitions are unnumbered in the paper, so they are labeled\nU-* in this report.\n"
+    },
+    {
+      "page": 4,
+      "number": 1,
+      "context": "tation\nconditions add residuals that constrain different parameter\ncombinations, which is why E_Toggle and ET6 outperform\nsingle-channel excitation under sensor noise.\nThe digital-twin retuning advantage is measured by\nequation (9). The paper does not only ask whether the\nidentified model is accurate; it asks whether it reduces real-\nplant gain-search cost. Equation (9) makes that comparison\npossible and leads to the HGS+BO(5) recommendation.\nExtraction Notes\nThe PDF contains numbered equations (1)-(9). Tokens such\nas \nCS-BO(30), \nWS-BO(30), \nHGS+BO(5), \nand\nHGS+BO(10) are method labels or budgets, not additional\nequation \nnumbers. \nSeveral \nimportant \nmathematical\ndefinitions are unnumbered in the paper, so they are labeled\nU-* in this report.\n"
+    },
+    {
+      "page": 4,
+      "number": 9,
+      "context": "on\nconditions add residuals that constrain different parameter\ncombinations, which is why E_Toggle and ET6 outperform\nsingle-channel excitation under sensor noise.\nThe digital-twin retuning advantage is measured by\nequation (9). The paper does not only ask whether the\nidentified model is accurate; it asks whether it reduces real-\nplant gain-search cost. Equation (9) makes that comparison\npossible and leads to the HGS+BO(5) recommendation.\nExtraction Notes\nThe PDF contains numbered equations (1)-(9). Tokens such\nas \nCS-BO(30), \nWS-BO(30), \nHGS+BO(5), \nand\nHGS+BO(10) are method labels or budgets, not additional\nequation \nnumbers. \nSeveral \nimportant \nmathematical\ndefinitions are unnumbered in the paper, so they are labeled\nU-* in this report.\n"
+    },
+    {
+      "page": 4,
+      "number": 30,
+      "context": "s that constrain different parameter\ncombinations, which is why E_Toggle and ET6 outperform\nsingle-channel excitation under sensor noise.\nThe digital-twin retuning advantage is measured by\nequation (9). The paper does not only ask whether the\nidentified model is accurate; it asks whether it reduces real-\nplant gain-search cost. Equation (9) makes that comparison\npossible and leads to the HGS+BO(5) recommendation.\nExtraction Notes\nThe PDF contains numbered equations (1)-(9). Tokens such\nas \nCS-BO(30), \nWS-BO(30), \nHGS+BO(5), \nand\nHGS+BO(10) are method labels or budgets, not additional\nequation \nnumbers. \nSeveral \nimportant \nmathematical\ndefinitions are unnumbered in the paper, so they are labeled\nU-* in this report.\n"
+    },
+    {
+      "page": 4,
+      "number": 30,
+      "context": "rain different parameter\ncombinations, which is why E_Toggle and ET6 outperform\nsingle-channel excitation under sensor noise.\nThe digital-twin retuning advantage is measured by\nequation (9). The paper does not only ask whether the\nidentified model is accurate; it asks whether it reduces real-\nplant gain-search cost. Equation (9) makes that comparison\npossible and leads to the HGS+BO(5) recommendation.\nExtraction Notes\nThe PDF contains numbered equations (1)-(9). Tokens such\nas \nCS-BO(30), \nWS-BO(30), \nHGS+BO(5), \nand\nHGS+BO(10) are method labels or budgets, not additional\nequation \nnumbers. \nSeveral \nimportant \nmathematical\ndefinitions are unnumbered in the paper, so they are labeled\nU-* in this report.\n"
+    },
+    {
+      "page": 4,
+      "number": 5,
+      "context": "t parameter\ncombinations, which is why E_Toggle and ET6 outperform\nsingle-channel excitation under sensor noise.\nThe digital-twin retuning advantage is measured by\nequation (9). The paper does not only ask whether the\nidentified model is accurate; it asks whether it reduces real-\nplant gain-search cost. Equation (9) makes that comparison\npossible and leads to the HGS+BO(5) recommendation.\nExtraction Notes\nThe PDF contains numbered equations (1)-(9). Tokens such\nas \nCS-BO(30), \nWS-BO(30), \nHGS+BO(5), \nand\nHGS+BO(10) are method labels or budgets, not additional\nequation \nnumbers. \nSeveral \nimportant \nmathematical\ndefinitions are unnumbered in the paper, so they are labeled\nU-* in this report.\n"
+    },
+    {
+      "page": 4,
+      "number": 10,
+      "context": "inations, which is why E_Toggle and ET6 outperform\nsingle-channel excitation under sensor noise.\nThe digital-twin retuning advantage is measured by\nequation (9). The paper does not only ask whether the\nidentified model is accurate; it asks whether it reduces real-\nplant gain-search cost. Equation (9) makes that comparison\npossible and leads to the HGS+BO(5) recommendation.\nExtraction Notes\nThe PDF contains numbered equations (1)-(9). Tokens such\nas \nCS-BO(30), \nWS-BO(30), \nHGS+BO(5), \nand\nHGS+BO(10) are method labels or budgets, not additional\nequation \nnumbers. \nSeveral \nimportant \nmathematical\ndefinitions are unnumbered in the paper, so they are labeled\nU-* in this report.\n"
+    }
+  ],
+  "math_lines": [
+    {
+      "page": 1,
+      "text": "U-0",
+      "score": 0.333
+    },
+    {
+      "page": 1,
+      "text": "(1)",
+      "score": 0.667
+    },
+    {
+      "page": 1,
+      "text": "(2)",
+      "score": 0.667
+    },
+    {
+      "page": 1,
+      "text": "(3)",
+      "score": 0.667
+    },
+    {
+      "page": 1,
+      "text": "the SysID tuning knob.",
+      "score": 0.227
+    },
+    {
+      "page": 1,
+      "text": "(4)",
+      "score": 0.667
+    },
+    {
+      "page": 1,
+      "text": "(5)",
+      "score": 0.667
+    },
+    {
+      "page": 1,
+      "text": "(6)",
+      "score": 0.667
+    },
+    {
+      "page": 1,
+      "text": "(7)",
+      "score": 0.667
+    },
+    {
+      "page": 1,
+      "text": "(8)",
+      "score": 0.667
+    },
+    {
+      "page": 1,
+      "text": "U-8",
+      "score": 0.333
+    },
+    {
+      "page": 1,
+      "text": "Uses α ∈ {1.5, 2, 5, 10, 50} and RMSEθ.",
+      "score": 0.385
+    },
+    {
+      "page": 1,
+      "text": "(9)",
+      "score": 0.667
+    },
+    {
+      "page": 1,
+      "text": "HGS+BO(5) reaches median cost 0.342 with",
+      "score": 0.1
+    },
+    {
+      "page": 1,
+      "text": "U-9",
+      "score": 0.333
+    },
+    {
+      "page": 1,
+      "text": "Tlog = 10-20 ms, LPF fc ≥ 50 Hz, K*",
+      "score": 0.4
+    },
+    {
+      "page": 1,
+      "text": "p = 100-",
+      "score": 0.25
+    },
+    {
+      "page": 1,
+      "text": "200.",
+      "score": 0.25
+    },
+    {
+      "page": 1,
+      "text": "x = [T1, T2, T3, ωUW, ωNip, ωRW]⊤ ∈ R6,",
+      "score": 0.359
+    },
+    {
+      "page": 1,
+      "text": "u = [uUW, uNip, uRW]⊤, y = [T1, T2, T3]⊤",
+      "score": 0.325
+    },
+    {
+      "page": 1,
+      "text": "U-0a",
+      "score": 0.25
+    },
+    {
+      "page": 1,
+      "text": "EA = E × h × w,   vi = ωiRi,   Jreel ∝ R4",
+      "score": 0.244
+    },
+    {
+      "page": 1,
+      "text": "U-0b",
+      "score": 0.25
+    },
+    {
+      "page": 2,
+      "text": "(1). Web tension dynamics",
+      "score": 0.12
+    },
+    {
+      "page": 2,
+      "text": "Ṫi = EA/Li(vi − vi−1) + 1/Li(Ti−1vi−1 − Tivi)",
+      "score": 0.311
+    },
+    {
+      "page": 2,
+      "text": "(1)",
+      "score": 0.667
+    },
+    {
+      "page": 2,
+      "text": "Equation (1) governs how each span tension changes. The first term says that velocity mismatch stretches or relaxes the web",
+      "score": 0.024
+    },
+    {
+      "page": 2,
+      "text": "This equation is the tension side of the simulator. It is integrated with equation (2) using RK4 at Δt = 1 ms, while the",
+      "score": 0.05
+    },
+    {
+      "page": 2,
+      "text": "Paper example. Because equation (1) produces the tension trajectories y, it directly feeds the one-step prediction residual in equation (7). The",
+      "score": 0.056
+    },
+    {
+      "page": 2,
+      "text": "noise Tlog = 10-20 ms becomes optimal.",
+      "score": 0.184
+    },
+    {
+      "page": 2,
+      "text": "(2). Roller velocity dynamics",
+      "score": 0.103
+    },
+    {
+      "page": 2,
+      "text": "v̇i = (Ri",
+      "score": 0.333
+    },
+    {
+      "page": 2,
+      "text": "2/Ji)(Ti+1 − Ti) − (fi/Ji)vi + (Ri/Ji)ui",
+      "score": 0.35
+    },
+    {
+      "page": 2,
+      "text": "(2)",
+      "score": 0.667
+    },
+    {
+      "page": 2,
+      "text": "Equation (2) is the roller-side dynamic equation. Tension differences accelerate or decelerate the roller through R2/J, friction",
+      "score": 0.047
+    },
+    {
+      "page": 2,
+      "text": "Equation (2) also clarifies the drift story. J appears in every denominator, so inertia drift changes the tension-coupling,",
+      "score": 0.049
+    },
+    {
+      "page": 2,
+      "text": "under NF and 43.6% under SN. That is consistent with equation (2), where changing J changes all roller dynamic coefficients.",
+      "score": 0.048
+    },
+    {
+      "page": 2,
+      "text": "(3). Outer-loop tension PI velocity correction",
+      "score": 0.087
+    },
+    {
+      "page": 2,
+      "text": "vcorr,i = (Li/EA)K*",
+      "score": 0.316
+    },
+    {
+      "page": 2,
+      "text": "p [σiei + (1/TI)∫0",
+      "score": 0.389
+    },
+    {
+      "page": 2,
+      "text": "tσiei(τ)dτ]",
+      "score": 0.545
+    },
+    {
+      "page": 2,
+      "text": "(3)",
+      "score": 0.667
+    },
+    {
+      "page": 2,
+      "text": "ei = Tref,i − Tmeas,i,   σi ∈ {−1, +1, +1},   K*",
+      "score": 0.375
+    },
+    {
+      "page": 2,
+      "text": "p = KpEA/L",
+      "score": 0.2
+    },
+    {
+      "page": 2,
+      "text": "U-3a",
+      "score": 0.25
+    },
+    {
+      "page": 2,
+      "text": "ωref,i = ωss,i + vcorr,i/Ri",
+      "score": 0.296
+    },
+    {
+      "page": 2,
+      "text": "U-3b",
+      "score": 0.25
+    },
+    {
+      "page": 2,
+      "text": "normalization: L/EA in equation (3) cancels with EA/L in equation (1). Therefore K*",
+      "score": 0.108
+    },
+    {
+      "page": 2,
+      "text": "lowest overall median RMSEθ (18.6%), while K*",
+      "score": 0.222
+    },
+    {
+      "page": 2,
+      "text": "(4). Inner-loop velocity P plus feedforward torque",
+      "score": 0.08
+    },
+    {
+      "page": 2,
+      "text": "ui = Kvel,i(ωref,i − ωi) + uff,i",
+      "score": 0.312
+    },
+    {
+      "page": 2,
+      "text": "(4)",
+      "score": 0.667
+    },
+    {
+      "page": 2,
+      "text": "Kvel,i = αJiωn,i,   ωn,i = √(EA Ri",
+      "score": 0.353
+    },
+    {
+      "page": 2,
+      "text": "2/(JiLi)),   α = 1.4",
+      "score": 0.45
+    },
+    {
+      "page": 2,
+      "text": "U-4a",
+      "score": 0.25
+    },
+    {
+      "page": 2,
+      "text": "Equation (4) is the inner velocity controller. It takes the angular-velocity target produced by equation (3), compares it to the",
+      "score": 0.055
+    },
+    {
+      "page": 2,
+      "text": "When equation (4) is combined with equation (2), motor torque enters roller acceleration. This cascade loop adds damping",
+      "score": 0.05
+    },
+    {
+      "page": 2,
+      "text": "accuracy (Spearman ρ = −0.19, p = 0.43). Therefore K*",
+      "score": 0.208
+    },
+    {
+      "page": 3,
+      "text": "(5). Measurement-based feedforward",
+      "score": 0.118
+    },
+    {
+      "page": 3,
+      "text": "uff,i = ±TmeasRi + fiωi",
+      "score": 0.217
+    },
+    {
+      "page": 3,
+      "text": "(5)",
+      "score": 0.667
+    },
+    {
+      "page": 3,
+      "text": "uff = [T0R0, (T2−T1)R1, −T2R2]⊤ + f ⊙ ω",
+      "score": 0.333
+    },
+    {
+      "page": 3,
+      "text": "across ±10% to ±50% EA perturbations. In contrast, J drift remains damaging because it changes the roller dynamics in equation (2).",
+      "score": 0.053
+    },
+    {
+      "page": 3,
+      "text": "(6). Ratio-parameter SysID formulation",
+      "score": 0.211
+    },
+    {
+      "page": 3,
+      "text": "kt,i = Ri",
+      "score": 0.222
+    },
+    {
+      "page": 3,
+      "text": "2/Ji,   kf,i = fi/Ji,   ku,i = Ri/Ji",
+      "score": 0.306
+    },
+    {
+      "page": 3,
+      "text": "(6)",
+      "score": 0.667
+    },
+    {
+      "page": 3,
+      "text": "θ = [kt,UW, kt,Nip, kt,RW, kf,UW, kf,Nip, kf,RW, EA] ∈ R7",
+      "score": 0.298
+    },
+    {
+      "page": 3,
+      "text": "U-6a",
+      "score": 0.25
+    },
+    {
+      "page": 3,
+      "text": "The paper does not estimate raw R, J, and f directly. It estimates the combinations that actually appear in equation (2). Since R",
+      "score": 0.047
+    },
+    {
+      "page": 3,
+      "text": "(7). One-step prediction-error cost",
+      "score": 0.143
+    },
+    {
+      "page": 3,
+      "text": "J(θ) = Σk=1",
+      "score": 0.545
+    },
+    {
+      "page": 3,
+      "text": "N ||yk − ŷk(θ)||2",
+      "score": 0.529
+    },
+    {
+      "page": 3,
+      "text": "(7)",
+      "score": 0.667
+    },
+    {
+      "page": 3,
+      "text": "(8). Multi-condition prediction-error cost",
+      "score": 0.119
+    },
+    {
+      "page": 3,
+      "text": "Jmulti(θ) = Σc=1",
+      "score": 0.375
+    },
+    {
+      "page": 3,
+      "text": "CΣk=1",
+      "score": 0.4
+    },
+    {
+      "page": 3,
+      "text": "Nc ||yk",
+      "score": 0.286
+    },
+    {
+      "page": 3,
+      "text": "(c) − ŷk",
+      "score": 0.5
+    },
+    {
+      "page": 3,
+      "text": "(c)(θ)||2",
+      "score": 0.778
+    },
+    {
+      "page": 3,
+      "text": "(8)",
+      "score": 0.667
+    },
+    {
+      "page": 3,
+      "text": "Equation (8) extends equation (7) by summing residuals across C excitation conditions. This gives the optimizer more",
+      "score": 0.043
+    },
+    {
+      "page": 3,
+      "text": "θinit = αθtrue,   α ∈ {1.5, 2, 5, 10, 50}",
+      "score": 0.366
+    },
+    {
+      "page": 3,
+      "text": "U-8a",
+      "score": 0.25
+    },
+    {
+      "page": 3,
+      "text": "errorj = |θest,j − θtrue,j|/θtrue,j × 100",
+      "score": 0.293
+    },
+    {
+      "page": 3,
+      "text": "U-8b",
+      "score": 0.25
+    },
+    {
+      "page": 3,
+      "text": "RMSEθ = n−1Σi|(θ̂i − θi)/θi| × 100,   RMSEy = n−1ΣiRMSEi",
+      "score": 0.429
+    },
+    {
+      "page": 3,
+      "text": "U-8c",
+      "score": 0.25
+    },
+    {
+      "page": 4,
+      "text": "(9). Channel-weighted retuning score",
+      "score": 0.111
+    },
+    {
+      "page": 4,
+      "text": "S = Σi=1",
+      "score": 0.375
+    },
+    {
+      "page": 4,
+      "text": "nwi( RMSEi/1 + OSi/100 + t90,i/15 + Utotal,i/200)",
+      "score": 0.306
+    },
+    {
+      "page": 4,
+      "text": "(9)",
+      "score": 0.667
+    },
+    {
+      "page": 4,
+      "text": "wi = |ΔTref,i| / Σj|ΔTref,j|",
+      "score": 0.393
+    },
+    {
+      "page": 4,
+      "text": "U-9a",
+      "score": 0.25
+    },
+    {
+      "page": 4,
+      "text": "RMSEi = √(N−1Σk(Ti(tk) − Tref,i)2)",
+      "score": 0.471
+    },
+    {
+      "page": 4,
+      "text": "U-9b",
+      "score": 0.25
+    },
+    {
+      "page": 4,
+      "text": "OSi = max(0, (Ti,peak − Tref,i",
+      "score": 0.233
+    },
+    {
+      "page": 4,
+      "text": "new)/|ΔTref,i|) × 100,   Utotal,i = ∫0",
+      "score": 0.342
+    },
+    {
+      "page": 4,
+      "text": "2(t)dt",
+      "score": 0.333
+    },
+    {
+      "page": 4,
+      "text": "U-9c",
+      "score": 0.25
+    },
+    {
+      "page": 4,
+      "text": "Equation (9) is the paper’s retuning objective. It combines four practical concerns: tracking error, overshoot, rise time to 90%,",
+      "score": 0.062
+    },
+    {
+      "page": 4,
+      "text": "Paper example. Table 3 and Figure 10 use S to compare retuning strategies. HGS+BO(5) achieves median cost 0.342 with 5 real evaluations,",
+      "score": 0.051
+    },
+    {
+      "page": 4,
+      "text": "lower than CS-BO(30) at 0.407, giving the paper’s reported 83% real-evaluation reduction.",
+      "score": 0.09
+    },
+    {
+      "page": 4,
+      "text": "τmin = 1 / maxi(|Re(λi)|)",
+      "score": 0.4
+    },
+    {
+      "page": 4,
+      "text": "U-10a",
+      "score": 0.2
+    },
+    {
+      "page": 4,
+      "text": "NF: τmin/Tlog ≥ 5;   SN: Tlog = 10-20 ms and LPF fc ≥ 50 Hz",
+      "score": 0.305
+    },
+    {
+      "page": 4,
+      "text": "U-10b",
+      "score": 0.2
+    },
+    {
+      "page": 4,
+      "text": "K*",
+      "score": 0.5
+    },
+    {
+      "page": 4,
+      "text": "p = 100 default,   K*",
+      "score": 0.19
+    },
+    {
+      "page": 4,
+      "text": "U-10c",
+      "score": 0.2
+    },
+    {
+      "page": 4,
+      "text": "Data design dominates because equations (1), (2), and (7)",
+      "score": 0.14
+    },
+    {
+      "page": 4,
+      "text": "generate tension and velocity transients; equation (7) fits",
+      "score": 0.051
+    },
+    {
+      "page": 4,
+      "text": "Tlog, but SN is best around 10-20 ms with LPF.",
+      "score": 0.239
+    },
+    {
+      "page": 4,
+      "text": "J drift dominates because equation (2) contains J in all",
+      "score": 0.036
+    },
+    {
+      "page": 4,
+      "text": "EA drift affects equation (1), but equation (5) partially",
+      "score": 0.088
+    },
+    {
+      "page": 4,
+      "text": "K*",
+      "score": 0.5
+    },
+    {
+      "page": 4,
+      "text": "p replaces ζ because equation (3) directly shapes",
+      "score": 0.061
+    },
+    {
+      "page": 4,
+      "text": "(4) compresses ζCL,min, so damping ratio no longer",
+      "score": 0.1
+    },
+    {
+      "page": 4,
+      "text": "equation (7).",
+      "score": 0.231
+    },
+    {
+      "page": 4,
+      "text": "Multi-condition excitation helps because equation (8)",
+      "score": 0.057
+    },
+    {
+      "page": 4,
+      "text": "equation (9). The paper does not only ask whether the",
+      "score": 0.057
+    },
+    {
+      "page": 4,
+      "text": "plant gain-search cost. Equation (9) makes that comparison",
+      "score": 0.069
+    },
+    {
+      "page": 4,
+      "text": "possible and leads to the HGS+BO(5) recommendation.",
+      "score": 0.078
+    },
+    {
+      "page": 4,
+      "text": "The PDF contains numbered equations (1)-(9). Tokens such",
+      "score": 0.107
+    },
+    {
+      "page": 4,
+      "text": "CS-BO(30),",
+      "score": 0.4
+    },
+    {
+      "page": 4,
+      "text": "WS-BO(30),",
+      "score": 0.4
+    },
+    {
+      "page": 4,
+      "text": "HGS+BO(5),",
+      "score": 0.4
+    },
+    {
+      "page": 4,
+      "text": "HGS+BO(10) are method labels or budgets, not additional",
+      "score": 0.073
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "text": "Equation Identifier for Practical system identification for roll-to-roll web tension\ncontrol\nSource: paper1_isa_v2.pdf. Scope: equations, definitions, decision rules, and examples extracted only from this PDF.\nTypography match. The PDF metadata reports LaTeX with pdfTeX. Extracted text is dominated by 10.0 pt body type, with embedded Type3\ntext fonts plus Computer Modern math fonts (CMR, CMMI, CMSY), STIX, TeX Gyre Termes, and Times New Roman. This report uses a\ncompact two-column academic layout, Times-style body text, and a math-style font stack to approximate the paper.\nEquation Index\nID\nEquation / definition\nRole in the paper\nPaper example or result linked to it\nU-0\nState, input, output, and physical\ndefinitions\nSets the variables for the R2R plant.\nThe 7-parameter SysID vector is built from\nthis plant description.\n(1)\nWeb tension dynamics\nComputes tension change in each span.\nUsed in all simulations and in the logging-\nrate result.\n(2)\nRoller velocity dynamics\nConnects tension, friction, inertia, and motor\ntorque.\nExplains why reel inertia drift is dominant.\n(3)\nOuter tension PI correction\nTurns tension error into velocity correction.\nLeads to the use of normalized gain K*\np as\nthe SysID tuning knob.\n(4)\nInner velocity P plus feedforward\ntorque\nGenerates motor torque from velocity error and\nfeedforward.\nCreates the cascade-control behavior where\nζCL,min loses predictive value.\n(5)\nMeasurement-based feedforward\nCompensates measured tension load and\nfriction.\nHelps absorb EA drift under cascade control.\n(6)\nRatio parameters kt, kf, ku\nDefines identifiable parameters used in SysID.\nPer-roller error asymmetry localizes drift\nsource.\n(7)\nOne-step prediction-error cost\nObjective minimized to estimate θ.\nData design changes RMSEθ by orders of\nmagnitude.\n(8)\nMulti-condition prediction-error cost\nCombines excitation conditions.\nSupports E_Toggle and multi-channel\nexcitation under noise.\nU-8\nInitial-guess and error metrics\nQuantifies convergence and SysID accuracy.\nUses α ∈ {1.5, 2, 5, 10, 50} and RMSEθ.\n(9)\nRetuning score S\nRanks PI retuning methods.\nHGS+BO(5) reaches median cost 0.342 with\n5 real evaluations.\nU-9\nDeployment rules\nTurns results into field protocol.\nTlog = 10-20 ms, LPF fc ≥ 50 Hz, K*\np = 100-\n200.\nDetailed Equation Explanations\nU-0. Plant variables and physical setup\nx = [T1, T2, T3, ωUW, ωNip, ωRW]⊤ ∈ R6,\nu = [uUW, uNip, uRW]⊤, y = [T1, T2, T3]⊤\nU-0a\nEA = E × h × w,   vi = ωiRi,   Jreel ∝ R4\nU-0b\nThe paper starts by fixing a three-span plant: three tensions and three roller angular velocities are the state, three torques are\nthe input, and only tension is measured as output. EA is the web axial stiffness, and the no-slip relation converts roller angular\nspeed into surface speed.\nPaper example. The later SysID model estimates seven parameters because the plant is represented by three tension states, three roller\nvelocity states, and a shared EA term. The paper also uses Jreel ∝ R4 to motivate why radius changes can cause large inertia drift.\n"
+    },
+    {
+      "page": 2,
+      "text": "(1). Web tension dynamics\nṪi = EA/Li(vi − vi−1) + 1/Li(Ti−1vi−1 − Tivi)\n(1)\nEquation (1) governs how each span tension changes. The first term says that velocity mismatch stretches or relaxes the web\nthrough stiffness EA. The second term accounts for convective transport of tension into and out of a span. The boundary\ncondition is T0 = T4 = 0 for the free spans before the unwinder and after the rewinder.\nThis equation is the tension side of the simulator. It is integrated with equation (2) using RK4 at Δt = 1 ms, while the\ncontroller runs at Ts = 10 ms and measurements are logged at Tlog.\nPaper example. Because equation (1) produces the tension trajectories y, it directly feeds the one-step prediction residual in equation (7). The\npaper’s logging result follows from this: under noise-free conditions τmin/Tlog ≥ 5 is sufficient for sub-3% SysID error, while under sensor\nnoise Tlog = 10-20 ms becomes optimal.\n(2). Roller velocity dynamics\nv̇i = (Ri\n2/Ji)(Ti+1 − Ti) − (fi/Ji)vi + (Ri/Ji)ui\n(2)\nEquation (2) is the roller-side dynamic equation. Tension differences accelerate or decelerate the roller through R2/J, friction\ndamps velocity through f/J, and motor torque enters through R/J. This is why the paper later estimates ratio parameters instead\nof raw R, J, and f.\nEquation (2) also clarifies the drift story. J appears in every denominator, so inertia drift changes the tension-coupling,\nfriction, and torque paths simultaneously. EA appears in the web equation but not directly in these roller ratios.\nPaper example. The drift study reports that asymmetric J drift (UW −50%, RW +100%) causes the largest degradation: RMSEθ = 39.3%\nunder NF and 43.6% under SN. That is consistent with equation (2), where changing J changes all roller dynamic coefficients.\n(3). Outer-loop tension PI velocity correction\nvcorr,i = (Li/EA)K*\np [σiei + (1/TI)∫0\ntσiei(τ)dτ]\n(3)\nei = Tref,i − Tmeas,i,   σi ∈ {−1, +1, +1},   K*\np = KpEA/L\nU-3a\nωref,i = ωss,i + vcorr,i/Ri\nU-3b\nThe outer controller converts a measured tension error into a surface-velocity correction. The paper emphasizes the\nnormalization: L/EA in equation (3) cancels with EA/L in equation (1). Therefore K*\np behaves as a plant-independent tension\ncorrection rate rather than a raw gain tied to one plant.\nPaper example. Section 3.5 uses K*\np as an information-content knob. Under SN at Tlog = 20 ms and LPF = 100 Hz, K*\np = 200 gives the\nlowest overall median RMSEθ (18.6%), while K*\np = 100 is recommended overall because it balances NF and SN behavior.\n(4). Inner-loop velocity P plus feedforward torque\nui = Kvel,i(ωref,i − ωi) + uff,i\n(4)\nKvel,i = αJiωn,i,   ωn,i = √(EA Ri\n2/(JiLi)),   α = 1.4\nU-4a\nEquation (4) is the inner velocity controller. It takes the angular-velocity target produced by equation (3), compares it to the\nmeasured roller speed, and adds feedforward. The velocity gain is auto-tuned from plant parameters through a natural-\nfrequency expression.\nWhen equation (4) is combined with equation (2), motor torque enters roller acceleration. This cascade loop adds damping\nand reshapes the transient response, which changes which SysID indicators are useful.\nPaper example. The paper reports that ζCL,min collapses to approximately 0.001 under cascade control and loses correlation with SysID\naccuracy (Spearman ρ = −0.19, p = 0.43). Therefore K*\np, not ζ, becomes the practical tuning variable.\n"
+    },
+    {
+      "page": 3,
+      "text": "(5). Measurement-based feedforward\nuff,i = ±TmeasRi + fiωi\n(5)\nuff = [T0R0, (T2−T1)R1, −T2R2]⊤ + f ⊙ ω\nFig. 1\nFeedforward supplies torque for measured tension load and friction. The key paper-specific point is that this feedforward is\nmeasurement-based, so it does not depend entirely on the current model parameters. That is why it can absorb some parameter\ndrift during operation.\nPaper example. The paper’s drift analysis says EA drift is largely absorbed by cascade feedforward, with median RMSEθ around 15-18%\nacross ±10% to ±50% EA perturbations. In contrast, J drift remains damaging because it changes the roller dynamics in equation (2).\n(6). Ratio-parameter SysID formulation\nkt,i = Ri\n2/Ji,   kf,i = fi/Ji,   ku,i = Ri/Ji\n(6)\nθ = [kt,UW, kt,Nip, kt,RW, kf,UW, kf,Nip, kf,RW, EA] ∈ R7\nU-6a\nThe paper does not estimate raw R, J, and f directly. It estimates the combinations that actually appear in equation (2). Since R\nand L can be measured on the line, ku,i can be derived rather than estimated independently, leaving seven identifiable\nparameters.\nPaper example. Per-roller SysID error asymmetry is used as a drift-source indicator. The paper gives the example kt,UW ≠ kt,RW and reports\nthat under asymmetric J drift, UW has much larger errors than Nip because UW is directly affected while Nip is mainly indirectly coupled.\n(7). One-step prediction-error cost\nJ(θ) = Σk=1\nN ||yk − ŷk(θ)||2\n(7)\nThis is the central SysID objective. For a candidate θ, the simulator predicts tension measurements ŷk(θ) at logged sampling\ninstants. The optimizer searches for θ that minimizes squared prediction error against measured yk.\nThe equation also explains why acquisition choices matter. If Tlog is too small under sensor noise, finite-difference noise is\namplified. If Tlog is too large, dynamic information is lost. If LPF is too aggressive, relevant oscillatory dynamics are\nsuppressed.\nPaper example. The paper reports a U-shaped noisy logging response: Tlog = 1 ms exceeds 169% median RMSEθ, while Tlog = 20 ms gives\n23.2% under the stated SN case. LPF = 50 Hz stabilizes convergence, while LPF = 10 Hz causes 100% convergence failure.\n(8). Multi-condition prediction-error cost\nJmulti(θ) = Σc=1\nCΣk=1\nNc ||yk\n(c) − ŷk\n(c)(θ)||2\n(8)\nEquation (8) extends equation (7) by summing residuals across C excitation conditions. This gives the optimizer more\nindependent information and reduces shallow or ambiguous cost landscapes.\nPaper example. Under NF, even single-channel excitation ET1 reaches RMSEθ = 2.5%. Under SN, richer multi-channel excitation matters:\nE_Toggle achieves 20.4%, ET6 21.0%, and EVR 25.1%, while ET1 is worse at 31.4%.\nU-8. Initial guesses and SysID accuracy metrics\nθinit = αθtrue,   α ∈ {1.5, 2, 5, 10, 50}\nU-8a\nerrorj = |θest,j − θtrue,j|/θtrue,j × 100\nU-8b\nRMSEθ = n−1Σi|(θ̂i − θi)/θi| × 100,   RMSEy = n−1ΣiRMSEi\nU-8c\nThe initial-guess scaling tests how wide the convergence basin is. The parameter-error formula compares identified\nparameters to known simulator truth. RMSEθ is used for SysID accuracy, while RMSEy is used for tracking validation and\nretuning context.\nPaper example. The paper repeatedly reports median RMSEθ to compare data designs. For deployment, Algorithm 1 verifies the digital twin\nthrough RMSEy on a validation step response before retuning.\n"
+    },
+    {
+      "page": 4,
+      "text": "(9). Channel-weighted retuning score\nS = Σi=1\nnwi( RMSEi/1 + OSi/100 + t90,i/15 + Utotal,i/200)\n(9)\nwi = |ΔTref,i| / Σj|ΔTref,j|\nU-9a\nRMSEi = √(N−1Σk(Ti(tk) − Tref,i)2)\nU-9b\nOSi = max(0, (Ti,peak − Tref,i\nnew)/|ΔTref,i|) × 100,   Utotal,i = ∫0\nTsimui\n2(t)dt\nU-9c\nEquation (9) is the paper’s retuning objective. It combines four practical concerns: tracking error, overshoot, rise time to 90%,\nand total squared control effort. The weights prioritize spans with larger reference-tension changes.\nPaper example. Table 3 and Figure 10 use S to compare retuning strategies. HGS+BO(5) achieves median cost 0.342 with 5 real evaluations,\nlower than CS-BO(30) at 0.407, giving the paper’s reported 83% real-evaluation reduction.\nU-10. Deployment rules derived from the equations\nτmin = 1 / maxi(|Re(λi)|)\nU-10a\nNF: τmin/Tlog ≥ 5;   SN: Tlog = 10-20 ms and LPF fc ≥ 50 Hz\nU-10b\nK*\np = 100 default,   K*\np = 200 under high noise;   validate RMSEy < ε and S < Ctarget\nU-10c\nThese are not new governing equations. They are the decision rules the paper derives from the model, SysID objective, and\nretuning score. τmin comes from plant eigenvalues, Tlog and LPF control data quality, K*\np controls transient information\ncontent, and RMSEy/S validate the digital twin and final gains.\nPaper example. Algorithm 1 and Figure 11 combine these rules into the final protocol: configure logging, set SysID-mode gain, collect toggle\nor multi-channel excitation data, estimate θ̂, build and verify the digital twin, run HGS+few-shot BO, then validate and restore production-\nmode gains.\nHow the Equations Produce the Paper’s Main Results\nData design dominates because equations (1), (2), and (7)\nare sensitive to sampled dynamics. The plant equations\ngenerate tension and velocity transients; equation (7) fits\nthose transients. If logging is too sparse, the residual lacks\ndynamic information. If logging is too fast under noise, the\nderivative-like one-step formulation amplifies noise. This\nproduces the paper’s reversal: NF improves with shorter\nTlog, but SN is best around 10-20 ms with LPF.\nJ drift dominates because equation (2) contains J in all\nthree roller coefficients. Inertia drift affects tension\ncoupling, friction damping, and torque response together.\nEA drift affects equation (1), but equation (5) partially\ncompensates measured tension effects under cascade\nfeedforward. This explains the paper’s conclusion that J\ndrift, not EA drift, is the dominant degradation driver under\ncascade control.\nK*\np replaces ζ because equation (3) directly shapes\ninformative transients. The cascade inner loop in equation\n(4) compresses ζCL,min, so damping ratio no longer\nseparates good and bad SysID cases. K*\np remains actionable\nbecause it directly changes the outer-loop velocity\ncorrection and therefore the richness of data available to\nequation (7).\nMulti-condition excitation helps because equation (8)\nadds independent constraints. One condition can leave\nshallow directions in the cost landscape. Multiple excitation\nconditions add residuals that constrain different parameter\ncombinations, which is why E_Toggle and ET6 outperform\nsingle-channel excitation under sensor noise.\nThe digital-twin retuning advantage is measured by\nequation (9). The paper does not only ask whether the\nidentified model is accurate; it asks whether it reduces real-\nplant gain-search cost. Equation (9) makes that comparison\npossible and leads to the HGS+BO(5) recommendation.\nExtraction Notes\nThe PDF contains numbered equations (1)-(9). Tokens such\nas \nCS-BO(30), \nWS-BO(30), \nHGS+BO(5), \nand\nHGS+BO(10) are method labels or budgets, not additional\nequation \nnumbers. \nSeveral \nimportant \nmathematical\ndefinitions are unnumbered in the paper, so they are labeled\nU-* in this report.\n"
+    }
+  ]
+}

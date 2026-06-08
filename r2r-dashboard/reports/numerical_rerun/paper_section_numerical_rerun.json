@@ -1,0 +1,1011 @@
+{
+  "created_by": "scripts/run_paper_section_numerical_rerun.py",
+  "plant": {
+    "plant": "P01",
+    "plant_id": "P01",
+    "label": "P01 | PE lab | EA=3200 N",
+    "EA_N": 3200.0,
+    "material": "PE",
+    "scale": "lab",
+    "regime": "O-UD",
+    "zeta_cl_min": 0.151,
+    "overshoot_percent": 45.8,
+    "recommended_excitation_amplitude_V": 0.08,
+    "baseline_range_compatible": true,
+    "roller_radius_m": [
+      0.05,
+      0.05,
+      0.05
+    ],
+    "span_length_m": [
+      0.8,
+      0.8,
+      1.6
+    ],
+    "inertia_kg_m2": [
+      0.075,
+      0.055,
+      0.09
+    ],
+    "viscous_friction": [
+      0.01,
+      0.012,
+      0.011
+    ],
+    "process_noise_b": 0.0,
+    "simulation_note": "Within extracted Table S4 EA range; recommended excitation is scaled from the P01 input.",
+    "applied_parameters": {
+      "EA_N": 3200.0,
+      "roller_radius_m": [
+        0.05,
+        0.05,
+        0.05
+      ],
+      "span_length_m": [
+        0.8,
+        0.8,
+        1.6
+      ],
+      "inertia_kg_m2": [
+        0.075,
+        0.055,
+        0.09
+      ],
+      "viscous_friction": [
+        0.01,
+        0.012,
+        0.011
+      ],
+      "process_noise_b": 0.0
+    }
+  },
+  "paper_references": {
+    "logging": {
+      "nf": {
+        "1": 0.0,
+        "5": 3.4,
+        "50": 38.8
+      },
+      "sn": {
+        "1": 169.0,
+        "20": 23.2,
+        "100": 77.2
+      },
+      "claim": "NF improves with shorter Tlog; SN is U-shaped with optimum at 10-20 ms."
+    },
+    "excitation": {
+      "nf": {
+        "ET1": 2.5,
+        "ET3": 3.5,
+        "ET6": 3.4,
+        "EVR": 3.5,
+        "E_Toggle": 3.4
+      },
+      "sn": {
+        "ET1": 31.4,
+        "ET3": 22.2,
+        "ET6": 21.0,
+        "EVR": 25.1,
+        "E_Toggle": 20.4
+      },
+      "claim": "Single-channel is sufficient under NF; multi-channel/toggle wins under SN."
+    },
+    "drift": {
+      "EA_plus30": 15.2,
+      "f_plus30": 20.5,
+      "J_UWminus30_RWplus50": 26.8,
+      "J_UWminus50_RWplus100": 39.3,
+      "claim": "J drift dominates; EA drift is partly absorbed by cascade feedforward."
+    },
+    "noise_lpf": {
+      "lpf_50hz_tlog20": 23.2,
+      "lpf_100hz_tlog20": 20.4,
+      "claim": "LPF >= 50 Hz is required; 10-20 ms logging is preferred under sensor noise."
+    },
+    "gain": {
+      "kp50_nf": 16.2,
+      "kp100_nf": 16.7,
+      "kp200_nf": 26.7,
+      "kp50_sn": 21.9,
+      "kp100_sn": 20.4,
+      "kp200_sn": 18.6,
+      "claim": "Kp* = 100 is the default; Kp* = 200 can help under sensor noise."
+    },
+    "retuning": {
+      "CS-BO(30)": {
+        "real_evaluations": 30,
+        "median_cost": 0.407
+      },
+      "WS-BO(30)": {
+        "real_evaluations": 30,
+        "median_cost": 0.408
+      },
+      "HGS-only": {
+        "real_evaluations": 0,
+        "median_cost": 0.403
+      },
+      "HGS+BO(5)": {
+        "real_evaluations": 5,
+        "median_cost": 0.342
+      },
+      "HGS+BO(10)": {
+        "real_evaluations": 10,
+        "median_cost": 0.337
+      },
+      "claim": "HGS+BO(5) beats CS-BO(30) with 83% fewer real evaluations."
+    }
+  },
+  "equation_summary": {
+    "state_vector": "x = [T1, T2, T3, omega_UW, omega_Nip, omega_RW]",
+    "input_vector": "u = [u_UW, u_Nip, u_RW]",
+    "output_vector": "y = [T1, T2, T3]",
+    "paper_source": {
+      "title": "Equation Identifier for Practical system identification for roll-to-roll web tension control",
+      "file_name": "paper1_isa_v2_equation_identifier.pdf",
+      "scope": "Equations, definitions, decision rules, and examples extracted only from the supplied PDF.",
+      "page_count": 4,
+      "typography": "Times-style body text with Cambria Math/TeX-like math extraction; dominant extracted size is about 9-10 pt."
+    },
+    "section2_note": "Paper-facing equations are taken from the supplied PDF paper1_isa_v2_equation_identifier.pdf. The PDF contains numbered equations (1)-(9) plus important unnumbered definitions labeled U-*. Tokens such as CS-BO(30), WS-BO(30), HGS+BO(5), and HGS+BO(10) are method labels or evaluation budgets, not equation numbers. System equations show the reduced equations actually used by the dashboard backend.",
+    "paper_equations": [
+      {
+        "number": "U-0",
+        "title": "Plant variables and physical setup",
+        "equation": "x = [T1, T2, T3, omega_UW, omega_Nip, omega_RW]^T in R^6; u = [u_UW, u_Nip, u_RW]^T; y = [T1, T2, T3]^T; EA = E*h*w; v_i = omega_i*R_i; J_reel proportional R^4",
+        "variables": "x contains three span tensions and three roller angular velocities; u is the paper motor-torque input; y is measured tension; EA is axial web stiffness.",
+        "paper_use": "The PDF uses these definitions to set the three-span R2R plant and to motivate the seven-parameter SysID vector.",
+        "dashboard_note": "The backend uses the same state and output order. Its input vector is a held motor-voltage command that is converted through backend motor gains."
+      },
+      {
+        "number": "(1)",
+        "title": "Web tension dynamics",
+        "equation": "dT_i/dt = (EA/L_i)(v_i - v_{i-1}) + (1/L_i)(T_{i-1}v_{i-1} - T_i v_i),  i = 1,2,3",
+        "variables": "T_i: span tension, EA: axial web stiffness, L_i: span length, v_i: roller surface velocity.",
+        "paper_use": "The PDF states the boundary condition T_0 = T_4 = 0 and links this tension equation to RK4 integration, one-step residuals, and the logging-rate result.",
+        "dashboard_note": "The backend reduced model keeps the velocity-mismatch stiffness term and adds reference-tension relaxation instead of the convective transport term."
+      },
+      {
+        "number": "(2)",
+        "title": "Roller velocity dynamics",
+        "equation": "dv_i/dt = (R_i^2/J_i)(T_{i+1} - T_i) - (f_i/J_i)v_i + (R_i/J_i)u_i",
+        "variables": "R_i: roller radius, J_i: moment of inertia, f_i: viscous friction, u_i: motor torque input.",
+        "paper_use": "The PDF uses this roller equation to explain why J drift is dominant: J appears in the tension-coupling, friction, and torque coefficients.",
+        "dashboard_note": "The backend state uses omega_i, so the runnable model represents this balance as domega_i/dt with web torque, friction, inertia, and voltage-to-torque gain."
+      },
+      {
+        "number": "(3)",
+        "title": "Outer-loop tension PI velocity correction",
+        "equation": "v_corr,i = (L_i/EA)Kp_star [sigma_i e_i + (1/TI) integral_0^t sigma_i e_i(tau) d tau]; omega_ref,i = omega_ss,i + v_corr,i/R_i",
+        "variables": "e_i = T_ref,i - T_meas,i; sigma_i in {-1,+1,+1}; Kp_star = Kp*EA/L is the normalized proportional gain.",
+        "paper_use": "The PDF emphasizes that L/EA in this controller cancels EA/L in equation (1), making Kp_star the practical information-content knob.",
+        "dashboard_note": "The backend controller uses the same tension-error-to-velocity-correction concept with a reduced coupling map for the three rollers."
+      },
+      {
+        "number": "(4)",
+        "title": "Inner-loop velocity P plus feedforward torque",
+        "equation": "u_i = K_vel,i(omega_ref,i - omega_i) + u_ff,i; K_vel,i = alpha*J_i*omega_n,i; omega_n,i = sqrt(EA*R_i^2/(J_i*L_i)); alpha = 1.4",
+        "variables": "omega_ref,i is the target from equation (3); omega_i is measured roller speed; u_ff,i is the feedforward torque.",
+        "paper_use": "The PDF links this cascade loop to the loss of predictive value in zeta_CL,min and the practical use of Kp_star instead.",
+        "dashboard_note": "The backend uses a velocity PI plus feedforward torque, then converts torque to a clamped voltage command."
+      },
+      {
+        "number": "(5)",
+        "title": "Measurement-based feedforward",
+        "equation": "u_ff,i = +/- T_meas*R_i + f_i*omega_i; u_ff = [T0*R0, (T2 - T1)R1, -T2*R2]^T + f o omega",
+        "variables": "The sign depends on roller/span direction; f o omega denotes elementwise friction compensation.",
+        "paper_use": "The PDF states that measurement-based feedforward compensates measured tension load and friction and can absorb some EA drift.",
+        "dashboard_note": "The backend feedforward uses the current web-torque balance and friction term to reduce the burden on the feedback loops."
+      },
+      {
+        "number": "(6)",
+        "title": "Ratio-parameter SysID formulation",
+        "equation": "k_t,i = R_i^2/J_i; k_f,i = f_i/J_i; k_u,i = R_i/J_i; theta = [kt_UW, kt_Nip, kt_RW, kf_UW, kf_Nip, kf_RW, EA] in R^7",
+        "variables": "R_i and L_i are treated as known measurable constants; ku_i can be derived rather than estimated independently.",
+        "paper_use": "The PDF uses these ratio parameters because they are the combinations that appear in equation (2).",
+        "dashboard_note": "The backend estimates the same seven displayed parameter names, while its runnable kt values are voltage-to-torque gains in the reduced model."
+      },
+      {
+        "number": "(7)",
+        "title": "One-step prediction-error cost",
+        "equation": "J(theta) = sum_{k=1}^N || y_k - y_hat_k(theta) ||^2",
+        "variables": "y_k is the measured tension vector at the logging instant; yhat_k(theta) is the model prediction.",
+        "paper_use": "The PDF identifies this as the central SysID objective and uses it to explain the sensitivity to logging period and filtering.",
+        "dashboard_note": "The dashboard reports parameter-estimation error tables and RMSE_theta from the resulting estimates."
+      },
+      {
+        "number": "(8)",
+        "title": "Multi-condition prediction-error cost",
+        "equation": "J_multi(theta) = sum_{c=1}^C sum_{k=1}^{N_c} || y_k^(c) - y_hat_k^(c)(theta) ||^2",
+        "variables": "c indexes distinct excitation or operating conditions.",
+        "paper_use": "The PDF states that multi-condition residuals add independent constraints and reduce shallow or ambiguous cost landscapes.",
+        "dashboard_note": "The excitation validation tab compares which excitation profiles produce better SysID information."
+      },
+      {
+        "number": "U-8",
+        "title": "Initial guesses and SysID accuracy metrics",
+        "equation": "theta_init = alpha*theta_true, alpha in {1.5, 2, 5, 10, 50}; error_j = |theta_est,j - theta_true,j|/theta_true,j*100; RMSE_theta = n^-1 sum_i |(theta_hat_i - theta_i)/theta_i|*100; RMSE_y = n^-1 sum_i RMSE_i",
+        "variables": "alpha scales the initial guess; error_j is per-parameter relative error; RMSE_theta and RMSE_y aggregate SysID and tracking errors.",
+        "paper_use": "The PDF uses these metrics to compare convergence basins, data designs, and validation step responses.",
+        "dashboard_note": "The backend reports RMSE_theta as a root-mean-square relative error, so the dashboard labels it as the implementation aggregate."
+      },
+      {
+        "number": "(9)",
+        "title": "Channel-weighted retuning score",
+        "equation": "S = sum_{i=1}^n w_i (RMSE_i/1 + OS_i/100 + t90_i/15 + U_total,i/200); w_i = |Delta T_ref,i|/sum_j |Delta T_ref,j|; RMSE_i = sqrt(N^-1 sum_k (T_i(t_k) - T_ref,i)^2); OS_i = max(0, (T_i,peak - T_ref,i,new)/|Delta T_ref,i|)*100; U_total,i = integral_0^Tsim u_i^2(t) dt",
+        "variables": "S combines tracking error, overshoot, rise time to 90%, and total squared control effort.",
+        "paper_use": "The PDF links this score to Table 3/Figure 10 and the HGS+BO(5) result: median cost 0.342 with five real evaluations versus CS-BO(30) at 0.407.",
+        "dashboard_note": "The dashboard retuning study uses a related cost combining RMSE, overshoot, t90, and control effort."
+      },
+      {
+        "number": "U-10",
+        "title": "Deployment rules derived from the equations",
+        "equation": "tau_min = 1/max_i(|Re(lambda_i)|); NF: tau_min/Tlog >= 5; SN: Tlog = 10-20 ms and LPF fc >= 50 Hz; Kp_star = 100 default, Kp_star = 200 under high noise; validate RMSE_y < epsilon and S < C_target",
+        "variables": "NF: noise-free; SN: sensor-noise case; LPF: low-pass filter; Kp_star controls transient information content.",
+        "paper_use": "The PDF describes these as decision rules derived from the model, SysID objective, and retuning score, not new governing equations.",
+        "dashboard_note": "Validation tabs expose the logging, excitation, SysID, and retuning checks that correspond to these rules."
+      }
+    ],
+    "backend_equations": [
+      {
+        "title": "Web transport kinematics",
+        "equation": "v_i = R_i * omega_i",
+        "variables": "R_i: roller radius, omega_i: angular velocity, v_i: surface speed.",
+        "backend_use": "Used in simulation logging, tension derivatives, and SysID EA regression."
+      },
+      {
+        "title": "Reduced three-span tension dynamics",
+        "equation": "dT1/dt = (EA/L1)(v_Nip - v_UW) - lambda_T(T1 - T1_ref); dT2/dt = (EA/L2)(v_RW - v_Nip) - lambda_T(T2 - T2_ref); dT3/dt = (EA/L3)(v_RW - 0.5(v_UW + v_Nip)) - lambda_T(T3 - T3_ref)",
+        "variables": "EA: web stiffness, L_i: span length, lambda_T: relaxation rate, T_i_ref: target tension.",
+        "backend_use": "Used by tension_derivatives(), derivatives(), rk4_step(), simulation rows, and the Calculation tab derivative example."
+      },
+      {
+        "title": "Web torque balance on rollers",
+        "equation": "tau_web,UW = (T3 - T1)R_UW; tau_web,Nip = (T1 - T2)R_Nip; tau_web,RW = (T2 - T3)R_RW",
+        "variables": "T_i: span tensions, R_i: roller radii.",
+        "backend_use": "Used by roller dynamics and by the cascade PI feedforward torque."
+      },
+      {
+        "title": "Roller velocity dynamics",
+        "equation": "domega_i/dt = (kt_i*u_i + tau_web,i - kf_i*omega_i) / J_i",
+        "variables": "J_i: inertia, kt_i: voltage-to-torque gain, kf_i: viscous friction, u_i: motor voltage.",
+        "backend_use": "Used by roller_velocity_derivatives(), derivatives(), rk4_step(), and SysID kt/kf regression."
+      },
+      {
+        "title": "Outer tension PI correction",
+        "equation": "c_i = Kp_star*e_i + (Kp_star/TI)*integral(e_i dt),  e_i = T_ref,i - T_i",
+        "variables": "c_i: tension-loop velocity correction, e_i: tension error, TI: integral time.",
+        "backend_use": "Used by CascadePIController.update() to build roller speed references."
+      },
+      {
+        "title": "Velocity reference coupling",
+        "equation": "v_ref,UW = v_line - c1 - 0.5c3; v_ref,Nip = v_line + c1 - c2 - 0.5c3; v_ref,RW = v_line + c2 + c3; omega_ref,i = v_ref,i/R_i",
+        "variables": "v_line: target line speed, c_i: tension-loop corrections.",
+        "backend_use": "Used by the PI controller to convert tension error into roller angular-speed references."
+      },
+      {
+        "title": "Inner velocity PI plus feedforward",
+        "equation": "tau_cmd,i = Kvel*e_omega,i + (Kvel/TI_vel)*integral(e_omega,i dt) + tau_ff,i; tau_ff,i = kf_i*omega_ref,i - tau_web,i; u_i = clamp(tau_cmd,i/kt_i)",
+        "variables": "e_omega,i = omega_ref,i - omega_i; tau_ff,i is friction and web-torque feedforward.",
+        "backend_use": "Used by CascadePIController.update() to produce the held motor-voltage input u."
+      },
+      {
+        "title": "RK4 state update",
+        "equation": "x_next = x + (dt/6)(k1 + 2k2 + 2k3 + k4)",
+        "variables": "k1...k4 are derivatives evaluated by the backend model while u is held constant over the integration step.",
+        "backend_use": "Used by rk4_step() for every 1 ms physics update in simulation."
+      },
+      {
+        "title": "Simulation tension RMSE",
+        "equation": "tension_rmse_N = sqrt(sum((T_i - T_ref,i)^2) / (3N))",
+        "variables": "N: logged row count, i: T1/T2/T3.",
+        "backend_use": "Used by compute_metrics() and displayed in Simulation, Drift, and Retuning results."
+      },
+      {
+        "title": "Control effort RMS",
+        "equation": "control_effort_rms_V = sqrt(sum(u_UW^2 + u_Nip^2 + u_RW^2) / (3N))",
+        "variables": "N: logged row count.",
+        "backend_use": "Used by compute_metrics() and displayed in Simulation, Drift, and Retuning results."
+      },
+      {
+        "title": "SysID roller regression",
+        "equation": "J_i*domega_i/dt - tau_web,i = kt_i*u_i - kf_i*omega_i",
+        "variables": "Finite differences from logged rows provide domega_i/dt.",
+        "backend_use": "Used by estimate_parameters() to solve kt_UW, kt_Nip, kt_RW, kf_UW, kf_Nip, and kf_RW."
+      },
+      {
+        "title": "SysID EA regression",
+        "equation": "dT_i/dt + lambda_T(T_i - T_ref,i) = EA*(speed_strain_i/L_i)",
+        "variables": "speed_strain_i is the backend span-speed mismatch for T1, T2, or T3.",
+        "backend_use": "Used by estimate_parameters() to solve EA from logged simulation rows."
+      },
+      {
+        "title": "SysID parameter RMSE",
+        "equation": "RMSE_theta = sqrt(mean(relative_error_i^2))",
+        "variables": "relative_error_i = (estimate_i - truth_i) / truth_i.",
+        "backend_use": "Used by estimate_parameters() and all SysID validation result tables."
+      }
+    ],
+    "derivation_steps": [
+      "Step 1: Compute surface speeds from roller kinematics: v_i = R_i * omega_i.",
+      "Step 2: Use speed differences across spans to compute web strain-rate.",
+      "Step 3: Convert strain-rate into tension-rate with EA, then add the reduced-model relaxation term.",
+      "Step 4: Convert neighboring span tensions into web torque on each roller.",
+      "Step 5: Use motor torque kt_i*u_i, web torque, and friction kf_i*omega_i to compute roller acceleration.",
+      "Step 6: Concatenate all derivatives in state-vector order and advance the state with RK4.",
+      "Step 7: During SysID, rearrange the same one-step equations into least-squares form for the seven estimated parameters."
+    ],
+    "tension_dynamics": [
+      "dT1/dt = (EA/L1)(R_Nip*omega_Nip - R_UW*omega_UW) - lambda_T(T1 - T1_ref)",
+      "dT2/dt = (EA/L2)(R_RW*omega_RW - R_Nip*omega_Nip) - lambda_T(T2 - T2_ref)",
+      "dT3/dt = (EA/L3)(R_RW*omega_RW - 0.5(R_UW*omega_UW + R_Nip*omega_Nip)) - lambda_T(T3 - T3_ref)"
+    ],
+    "roller_velocity_dynamics": [
+      "J_UW*domega_UW/dt = kt_UW*u_UW + (T3 - T1)R_UW - kf_UW*omega_UW",
+      "J_Nip*domega_Nip/dt = kt_Nip*u_Nip + (T1 - T2)R_Nip - kf_Nip*omega_Nip",
+      "J_RW*domega_RW/dt = kt_RW*u_RW + (T2 - T3)R_RW - kf_RW*omega_RW"
+    ],
+    "sysid_parameters": [
+      "kt_UW",
+      "kt_Nip",
+      "kt_RW",
+      "kf_UW",
+      "kf_Nip",
+      "kf_RW",
+      "EA"
+    ],
+    "units": {
+      "T": "N",
+      "omega": "rad/s",
+      "u": "V",
+      "R": "m",
+      "L": "m",
+      "J": "kg*m^2",
+      "kt": "N*m/V",
+      "kf": "N*m*s/rad",
+      "EA": "N",
+      "b": "dimensionless process-noise scale"
+    }
+  },
+  "sections": {
+    "logging": {
+      "rows": [
+        {
+          "case": "NF",
+          "Tlog_ms": 1,
+          "paper_RMSE_theta_percent": 0.0,
+          "sim_RMSE_theta_percent": 0.010562613589633325,
+          "relative_difference_percent": null,
+          "samples": 6001
+        },
+        {
+          "case": "NF",
+          "Tlog_ms": 2,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 0.023039862859105226,
+          "relative_difference_percent": null,
+          "samples": 3001
+        },
+        {
+          "case": "NF",
+          "Tlog_ms": 5,
+          "paper_RMSE_theta_percent": 3.4,
+          "sim_RMSE_theta_percent": 0.08388062479897189,
+          "relative_difference_percent": -97.53292280003024,
+          "samples": 1201
+        },
+        {
+          "case": "NF",
+          "Tlog_ms": 10,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 0.2831684218090018,
+          "relative_difference_percent": null,
+          "samples": 601
+        },
+        {
+          "case": "NF",
+          "Tlog_ms": 20,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 0.6620117551610217,
+          "relative_difference_percent": null,
+          "samples": 301
+        },
+        {
+          "case": "NF",
+          "Tlog_ms": 50,
+          "paper_RMSE_theta_percent": 38.8,
+          "sim_RMSE_theta_percent": 2.909987554289573,
+          "relative_difference_percent": -92.50003207657328,
+          "samples": 121
+        },
+        {
+          "case": "NF",
+          "Tlog_ms": 100,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 8.772491250115277,
+          "relative_difference_percent": null,
+          "samples": 61
+        },
+        {
+          "case": "SN",
+          "Tlog_ms": 1,
+          "paper_RMSE_theta_percent": 169.0,
+          "sim_RMSE_theta_percent": 1.006766512287509,
+          "relative_difference_percent": -99.40428017024408,
+          "samples": 6001
+        },
+        {
+          "case": "SN",
+          "Tlog_ms": 2,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 0.565863582668631,
+          "relative_difference_percent": null,
+          "samples": 3001
+        },
+        {
+          "case": "SN",
+          "Tlog_ms": 5,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 0.6631137641662215,
+          "relative_difference_percent": null,
+          "samples": 1201
+        },
+        {
+          "case": "SN",
+          "Tlog_ms": 10,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 1.483244619870021,
+          "relative_difference_percent": null,
+          "samples": 601
+        },
+        {
+          "case": "SN",
+          "Tlog_ms": 20,
+          "paper_RMSE_theta_percent": 23.2,
+          "sim_RMSE_theta_percent": 2.791675951985246,
+          "relative_difference_percent": -87.96691400006361,
+          "samples": 301
+        },
+        {
+          "case": "SN",
+          "Tlog_ms": 50,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 2.33410932978841,
+          "relative_difference_percent": null,
+          "samples": 121
+        },
+        {
+          "case": "SN",
+          "Tlog_ms": 100,
+          "paper_RMSE_theta_percent": 77.2,
+          "sim_RMSE_theta_percent": 8.384899020984161,
+          "relative_difference_percent": -89.13873183810342,
+          "samples": 61
+        }
+      ],
+      "csv_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\numerical_rerun\\data\\logging_rerun.csv",
+      "figure_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\numerical_rerun\\figures\\logging_rerun.png",
+      "best_sn_Tlog_ms": 2,
+      "best_sn_RMSE_theta_percent": 0.565863582668631,
+      "paper_claim": "NF improves with shorter Tlog; SN is U-shaped with optimum at 10-20 ms."
+    },
+    "excitation": {
+      "rows": [
+        {
+          "case": "NF",
+          "excitation": "ET1",
+          "paper_RMSE_theta_percent": 2.5,
+          "sim_RMSE_theta_percent": 0.05753588098933503,
+          "relative_difference_percent": -97.69856476042659,
+          "samples": 1201
+        },
+        {
+          "case": "NF",
+          "excitation": "ET3",
+          "paper_RMSE_theta_percent": 3.5,
+          "sim_RMSE_theta_percent": 0.03696157300880835,
+          "relative_difference_percent": -98.9439550568912,
+          "samples": 1201
+        },
+        {
+          "case": "NF",
+          "excitation": "ET6",
+          "paper_RMSE_theta_percent": 3.4,
+          "sim_RMSE_theta_percent": 0.07424477533523079,
+          "relative_difference_percent": -97.81633013719909,
+          "samples": 1201
+        },
+        {
+          "case": "NF",
+          "excitation": "E_Toggle",
+          "paper_RMSE_theta_percent": 3.4,
+          "sim_RMSE_theta_percent": 0.08388062479897189,
+          "relative_difference_percent": -97.53292280003024,
+          "samples": 1201
+        },
+        {
+          "case": "NF",
+          "excitation": "EVR",
+          "paper_RMSE_theta_percent": 3.5,
+          "sim_RMSE_theta_percent": 0.06693993553848562,
+          "relative_difference_percent": -98.08743041318613,
+          "samples": 1201
+        },
+        {
+          "case": "SN",
+          "excitation": "ET1",
+          "paper_RMSE_theta_percent": 31.4,
+          "sim_RMSE_theta_percent": 0.5409861489094131,
+          "relative_difference_percent": -98.27711417544774,
+          "samples": 301
+        },
+        {
+          "case": "SN",
+          "excitation": "ET3",
+          "paper_RMSE_theta_percent": 22.2,
+          "sim_RMSE_theta_percent": 0.43191030092255106,
+          "relative_difference_percent": -98.05445810395248,
+          "samples": 301
+        },
+        {
+          "case": "SN",
+          "excitation": "ET6",
+          "paper_RMSE_theta_percent": 21.0,
+          "sim_RMSE_theta_percent": 0.5668666968079896,
+          "relative_difference_percent": -97.30063477710482,
+          "samples": 301
+        },
+        {
+          "case": "SN",
+          "excitation": "E_Toggle",
+          "paper_RMSE_theta_percent": 20.4,
+          "sim_RMSE_theta_percent": 1.2732373211179118,
+          "relative_difference_percent": -93.75864058275533,
+          "samples": 301
+        },
+        {
+          "case": "SN",
+          "excitation": "EVR",
+          "paper_RMSE_theta_percent": 25.1,
+          "sim_RMSE_theta_percent": 1.2301952079533842,
+          "relative_difference_percent": -95.09882387269569,
+          "samples": 301
+        }
+      ],
+      "csv_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\numerical_rerun\\data\\excitation_rerun.csv",
+      "figure_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\numerical_rerun\\figures\\excitation_rerun.png",
+      "best_sn_excitation": "ET3",
+      "best_sn_RMSE_theta_percent": 0.43191030092255106,
+      "paper_claim": "Single-channel is sufficient under NF; multi-channel/toggle wins under SN."
+    },
+    "drift": {
+      "rows": [
+        {
+          "scenario": "EA_plus30",
+          "paper_RMSE_theta_percent": 15.2,
+          "sim_RMSE_theta_percent": 0.6338592267554543,
+          "sim_tension_rmse_N": 0.3724153736142308,
+          "sim_overshoot_N": 0.9457237241753376,
+          "sim_degradation_score": 1.9519983245450225,
+          "relative_difference_percent": -95.8298735081878
+        },
+        {
+          "scenario": "f_plus30",
+          "paper_RMSE_theta_percent": 20.5,
+          "sim_RMSE_theta_percent": 0.658872733475774,
+          "sim_tension_rmse_N": 0.2824613637896057,
+          "sim_overshoot_N": 0.7568011197137849,
+          "sim_degradation_score": 1.6981352169791646,
+          "relative_difference_percent": -96.78598666597183
+        },
+        {
+          "scenario": "J_UWminus30_RWplus50",
+          "paper_RMSE_theta_percent": 26.8,
+          "sim_RMSE_theta_percent": 7.160929511923274,
+          "sim_tension_rmse_N": 0.2636649383654211,
+          "sim_overshoot_N": 0.6938095446758865,
+          "sim_degradation_score": 8.11840399496458,
+          "relative_difference_percent": -73.28011376148032
+        },
+        {
+          "scenario": "J_UWminus50_RWplus100",
+          "paper_RMSE_theta_percent": 39.3,
+          "sim_RMSE_theta_percent": 12.750393088434533,
+          "sim_tension_rmse_N": 0.2673139305107212,
+          "sim_overshoot_N": 0.6708056799175353,
+          "sim_degradation_score": 13.68851269886279,
+          "relative_difference_percent": -67.55625168337268
+        }
+      ],
+      "csv_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\numerical_rerun\\data\\drift_rerun.csv",
+      "figure_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\numerical_rerun\\figures\\drift_rerun.png",
+      "dominant_simulated_source": "J_UWminus50_RWplus100",
+      "paper_claim": "J drift dominates; EA drift is partly absorbed by cascade feedforward."
+    },
+    "noise_lpf": {
+      "rows": [
+        {
+          "LPF": "No LPF",
+          "Tlog_ms": 1,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 0.6783384743459099,
+          "relative_difference_percent": null,
+          "samples": 6001
+        },
+        {
+          "LPF": "No LPF",
+          "Tlog_ms": 2,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 0.47581992534218526,
+          "relative_difference_percent": null,
+          "samples": 3001
+        },
+        {
+          "LPF": "No LPF",
+          "Tlog_ms": 5,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 1.8687793117356095,
+          "relative_difference_percent": null,
+          "samples": 1201
+        },
+        {
+          "LPF": "No LPF",
+          "Tlog_ms": 10,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 1.501105455846634,
+          "relative_difference_percent": null,
+          "samples": 601
+        },
+        {
+          "LPF": "No LPF",
+          "Tlog_ms": 20,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 0.8597936652269887,
+          "relative_difference_percent": null,
+          "samples": 301
+        },
+        {
+          "LPF": "No LPF",
+          "Tlog_ms": 50,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 1.5175403152222298,
+          "relative_difference_percent": null,
+          "samples": 121
+        },
+        {
+          "LPF": "No LPF",
+          "Tlog_ms": 100,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 11.588420741354135,
+          "relative_difference_percent": null,
+          "samples": 61
+        },
+        {
+          "LPF": "10 Hz",
+          "Tlog_ms": 1,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 3.384241129119145,
+          "relative_difference_percent": null,
+          "samples": 6001
+        },
+        {
+          "LPF": "10 Hz",
+          "Tlog_ms": 2,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 3.8975601757945273,
+          "relative_difference_percent": null,
+          "samples": 3001
+        },
+        {
+          "LPF": "10 Hz",
+          "Tlog_ms": 5,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 5.154838643192811,
+          "relative_difference_percent": null,
+          "samples": 1201
+        },
+        {
+          "LPF": "10 Hz",
+          "Tlog_ms": 10,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 5.658402593057932,
+          "relative_difference_percent": null,
+          "samples": 601
+        },
+        {
+          "LPF": "10 Hz",
+          "Tlog_ms": 20,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 4.996288255695303,
+          "relative_difference_percent": null,
+          "samples": 301
+        },
+        {
+          "LPF": "10 Hz",
+          "Tlog_ms": 50,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 6.8951015598310015,
+          "relative_difference_percent": null,
+          "samples": 121
+        },
+        {
+          "LPF": "10 Hz",
+          "Tlog_ms": 100,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 16.932349230290324,
+          "relative_difference_percent": null,
+          "samples": 61
+        },
+        {
+          "LPF": "50 Hz",
+          "Tlog_ms": 1,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 0.43012566265272234,
+          "relative_difference_percent": null,
+          "samples": 6001
+        },
+        {
+          "LPF": "50 Hz",
+          "Tlog_ms": 2,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 0.724712603093015,
+          "relative_difference_percent": null,
+          "samples": 3001
+        },
+        {
+          "LPF": "50 Hz",
+          "Tlog_ms": 5,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 2.0948384936164492,
+          "relative_difference_percent": null,
+          "samples": 1201
+        },
+        {
+          "LPF": "50 Hz",
+          "Tlog_ms": 10,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 1.8604631147572788,
+          "relative_difference_percent": null,
+          "samples": 601
+        },
+        {
+          "LPF": "50 Hz",
+          "Tlog_ms": 20,
+          "paper_RMSE_theta_percent": 23.2,
+          "sim_RMSE_theta_percent": 1.0387303111760384,
+          "relative_difference_percent": -95.52271417596535,
+          "samples": 301
+        },
+        {
+          "LPF": "50 Hz",
+          "Tlog_ms": 50,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 1.9553065902694746,
+          "relative_difference_percent": null,
+          "samples": 121
+        },
+        {
+          "LPF": "50 Hz",
+          "Tlog_ms": 100,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 12.45356248946094,
+          "relative_difference_percent": null,
+          "samples": 61
+        },
+        {
+          "LPF": "100 Hz",
+          "Tlog_ms": 1,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 0.5254112490529064,
+          "relative_difference_percent": null,
+          "samples": 6001
+        },
+        {
+          "LPF": "100 Hz",
+          "Tlog_ms": 2,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 0.5682382541049529,
+          "relative_difference_percent": null,
+          "samples": 3001
+        },
+        {
+          "LPF": "100 Hz",
+          "Tlog_ms": 5,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 1.955302307942827,
+          "relative_difference_percent": null,
+          "samples": 1201
+        },
+        {
+          "LPF": "100 Hz",
+          "Tlog_ms": 10,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 1.6482617915734386,
+          "relative_difference_percent": null,
+          "samples": 601
+        },
+        {
+          "LPF": "100 Hz",
+          "Tlog_ms": 20,
+          "paper_RMSE_theta_percent": 20.4,
+          "sim_RMSE_theta_percent": 0.885856657308524,
+          "relative_difference_percent": -95.65756540535037,
+          "samples": 301
+        },
+        {
+          "LPF": "100 Hz",
+          "Tlog_ms": 50,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 1.6632250198816134,
+          "relative_difference_percent": null,
+          "samples": 121
+        },
+        {
+          "LPF": "100 Hz",
+          "Tlog_ms": 100,
+          "paper_RMSE_theta_percent": null,
+          "sim_RMSE_theta_percent": 12.005133689855535,
+          "relative_difference_percent": null,
+          "samples": 61
+        }
+      ],
+      "csv_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\numerical_rerun\\data\\noise_lpf_rerun.csv",
+      "figure_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\numerical_rerun\\figures\\noise_lpf_rerun.png",
+      "best_case": {
+        "LPF": "50 Hz",
+        "Tlog_ms": 1,
+        "RMSE_theta_percent": 0.43012566265272234
+      },
+      "paper_claim": "LPF >= 50 Hz is required; 10-20 ms logging is preferred under sensor noise."
+    },
+    "gain": {
+      "rows": [
+        {
+          "case": "NF",
+          "Kp_star_label": 50,
+          "backend_Kp_star_m_s_per_N": 5e-06,
+          "paper_RMSE_theta_percent": 16.2,
+          "sim_RMSE_theta_percent": 0.6632188175942385,
+          "sim_overshoot_N": 0.7477875565666352,
+          "relative_difference_percent": -95.90605668151706
+        },
+        {
+          "case": "NF",
+          "Kp_star_label": 100,
+          "backend_Kp_star_m_s_per_N": 1e-05,
+          "paper_RMSE_theta_percent": 16.7,
+          "sim_RMSE_theta_percent": 0.6620117551610217,
+          "sim_overshoot_N": 0.7564753735180787,
+          "relative_difference_percent": -96.03585775352681
+        },
+        {
+          "case": "NF",
+          "Kp_star_label": 200,
+          "backend_Kp_star_m_s_per_N": 2e-05,
+          "paper_RMSE_theta_percent": 26.7,
+          "sim_RMSE_theta_percent": 0.6597032430093367,
+          "sim_overshoot_N": 0.7700136585168238,
+          "relative_difference_percent": -97.52920133704369
+        },
+        {
+          "case": "SN",
+          "Kp_star_label": 50,
+          "backend_Kp_star_m_s_per_N": 5e-06,
+          "paper_RMSE_theta_percent": 21.9,
+          "sim_RMSE_theta_percent": 2.1215338803541814,
+          "sim_overshoot_N": 1.0789252161808136,
+          "relative_difference_percent": -90.31263068331424
+        },
+        {
+          "case": "SN",
+          "Kp_star_label": 100,
+          "backend_Kp_star_m_s_per_N": 1e-05,
+          "paper_RMSE_theta_percent": 20.4,
+          "sim_RMSE_theta_percent": 2.7203138067712045,
+          "sim_overshoot_N": 0.9340574537231703,
+          "relative_difference_percent": -86.66512839818036
+        },
+        {
+          "case": "SN",
+          "Kp_star_label": 200,
+          "backend_Kp_star_m_s_per_N": 2e-05,
+          "paper_RMSE_theta_percent": 18.6,
+          "sim_RMSE_theta_percent": 1.730010269042331,
+          "sim_overshoot_N": 0.8438236845091396,
+          "relative_difference_percent": -90.69886952127779
+        }
+      ],
+      "csv_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\numerical_rerun\\data\\gain_rerun.csv",
+      "figure_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\numerical_rerun\\figures\\gain_rerun.png",
+      "best_sn_gain": 200,
+      "paper_claim": "Kp* = 100 is the default; Kp* = 200 can help under sensor noise."
+    },
+    "retuning": {
+      "rows": [
+        {
+          "method": "CS-BO(30)",
+          "paper_real_evaluations": 30.0,
+          "sim_real_evaluations": 30.0,
+          "helper_candidate_evaluations": 30.0,
+          "paper_median_cost": 0.407,
+          "sim_final_cost": 0.9345973942478977,
+          "cost_relative_difference_percent": 129.63080939751788
+        },
+        {
+          "method": "HGS-only",
+          "paper_real_evaluations": 0.0,
+          "sim_real_evaluations": 0.0,
+          "helper_candidate_evaluations": 1.0,
+          "paper_median_cost": 0.403,
+          "sim_final_cost": 0.25556514087102056,
+          "cost_relative_difference_percent": -36.58433229006935
+        },
+        {
+          "method": "HGS+BO(5)",
+          "paper_real_evaluations": 5.0,
+          "sim_real_evaluations": 5.0,
+          "helper_candidate_evaluations": 6.0,
+          "paper_median_cost": 0.342,
+          "sim_final_cost": 0.2539470654352036,
+          "cost_relative_difference_percent": -25.746472094969707
+        },
+        {
+          "method": "HGS+BO(10)",
+          "paper_real_evaluations": 10.0,
+          "sim_real_evaluations": 10.0,
+          "helper_candidate_evaluations": 11.0,
+          "paper_median_cost": 0.337,
+          "sim_final_cost": 0.24712328432215644,
+          "cost_relative_difference_percent": -26.669648569093052
+        }
+      ],
+      "csv_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\numerical_rerun\\data\\retuning_rerun.csv",
+      "figure_path": "C:\\Users\\user\\Documents\\Git+ Learning\\r2r-dashboard\\reports\\numerical_rerun\\figures\\retuning_rerun.png",
+      "best_simulated_method": "HGS+BO(10)",
+      "paper_claim": "HGS+BO(5) beats CS-BO(30) with 83% fewer real evaluations."
+    }
+  },
+  "alignment": [
+    {
+      "section": "Logging adequacy",
+      "paper_claim": "NF improves with shorter Tlog; SN is U-shaped with optimum at 10-20 ms.",
+      "rerun_finding": "Best SN Tlog = 2 ms",
+      "alignment": "does not support"
+    },
+    {
+      "section": "Excitation diversity",
+      "paper_claim": "Single-channel is sufficient under NF; multi-channel/toggle wins under SN.",
+      "rerun_finding": "Best SN excitation = ET3",
+      "alignment": "supports"
+    },
+    {
+      "section": "Parameter drift",
+      "paper_claim": "J drift dominates; EA drift is partly absorbed by cascade feedforward.",
+      "rerun_finding": "Largest simulated RMSE scenario = J_UWminus50_RWplus100",
+      "alignment": "supports"
+    },
+    {
+      "section": "Noise and LPF",
+      "paper_claim": "LPF >= 50 Hz is required; 10-20 ms logging is preferred under sensor noise.",
+      "rerun_finding": "Best case = 50 Hz at 1 ms",
+      "alignment": "partial"
+    },
+    {
+      "section": "SysID-mode gain",
+      "paper_claim": "Kp* = 100 is the default; Kp* = 200 can help under sensor noise.",
+      "rerun_finding": "Best SN gain label = Kp* 200",
+      "alignment": "supports"
+    },
+    {
+      "section": "Retuning",
+      "paper_claim": "HGS+BO(5) beats CS-BO(30) with 83% fewer real evaluations.",
+      "rerun_finding": "Lowest simulated cost = HGS+BO(10)",
+      "alignment": "supports"
+    }
+  ],
+  "limitations": [
+    "The PDFs do not provide raw simulation CSV files or optimization seeds.",
+    "The project reference contains plant-specific EA/regime metadata, but exact per-plant `R`, `J`, `f`, `L`, and `b` arrays are not available.",
+    "The dashboard backend uses the implemented reduced three-span state model documented in `backend/models/equations.py`; several paper equations are represented in reduced form.",
+    "Paper values are mostly medians across ten plants and many seeds; this rerun uses the baseline-compatible P01 plant for section experiments unless the existing retuning helper performs its own candidates."
+  ]
+}
